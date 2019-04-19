@@ -15,4 +15,5 @@
     <li>Do not add models (*.th) to the repo.</li>
     <li>The original baseline configuration was referenced from <a href="https://github.com/allenai/allennlp/blob/master/training_config/naqanet.jsonnet">here</a>.
     <li>Yes. The model takes forever to train.</li>
+    <li>To run the training script, do it from the top-level of the repo: <code>./scripts/train.sh experiments/baseline.jsonnet out/test</code>. First argument is the config file. Second is the output file. Will automatically run in background so you can log off if needed. Will also automatically REMOVE THE SPECIFIED OUTPUT DIRECTORY. BE CAREFUL.</li>
 </ul>
