@@ -13,6 +13,6 @@
     <li>Be sure to update your allennlp so that we can get the DROP dataset/models: <code>pip install allennlp --upgrade</code></li>
     <li>We are following <a href="https://github.com/allenai/allennlp-as-a-library-example/tree/master">this library structure</a>. Please be sure to follow this structure so we can maintain organization. Properly name your files and output folders.</li>
     <li>Do not add models (*.th) to the repo.</li>
-    <li>The original baseline configuration was referenced from <a href="https://github.com/allenai/allennlp/blob/master/allennlp/models/reading_comprehension/naqanet.py">here</a>.
+    <li>The original baseline configuration was referenced from <a href="https://github.com/allenai/allennlp/blob/master/training_config/naqanet.jsonnet">here</a>.
     <li>Yes. The model takes forever to train.</li>
 </ul>
