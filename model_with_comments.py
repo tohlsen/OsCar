@@ -82,7 +82,7 @@ class NumericallyAugmentedQaNet(Model):
 
         if "passage_span_extraction" in self.answering_abilities:
             self._passage_span_extraction_index = self.answering_abilities.index("passage_span_extraction")
-            
+
             # takes in two encoded models, outputs start index of passage prediction (see QANet)
             self._passage_span_start_predictor = FeedForward(modeling_out_dim * 2,
                                                              activations=[Activation.by_name('relu')(),
@@ -166,6 +166,8 @@ class NumericallyAugmentedQaNet(Model):
         encoded_question = self._dropout(self._phrase_layer(projected_embedded_question, question_mask))
         encoded_passage = self._dropout(self._phrase_layer(projected_embedded_passage, passage_mask))
 
+
+        ############################ Context-Query Attention #########################################
         # getting passage & question similarity, getting an attention matrix
         # Shape: (batch_size, passage_length, question_length)
         passage_question_similarity = self._matrix_attention(encoded_passage, encoded_question)
@@ -173,7 +175,7 @@ class NumericallyAugmentedQaNet(Model):
         passage_question_attention = masked_softmax(passage_question_similarity,
                                                     question_mask,
                                                     memory_efficient=True)
-        
+
         # drawing attention to which part of the passage has to do with the question??
         # Shape: (batch_size, passage_length, encoding_dim)
         passage_question_vectors = util.weighted_sum(encoded_question, passage_question_attention)
@@ -184,7 +186,7 @@ class NumericallyAugmentedQaNet(Model):
                                                     passage_mask,
                                                     memory_efficient=True)
 
-        # 
+        #
         # Shape: (batch_size, passage_length, passage_length)
         passsage_attention_over_attention = torch.bmm(passage_question_attention, question_passage_attention)
         # Shape: (batch_size, passage_length, encoding_dim)
@@ -196,7 +198,9 @@ class NumericallyAugmentedQaNet(Model):
                            encoded_passage * passage_question_vectors,
                            encoded_passage * passage_passage_vectors],
                           dim=-1))
+        ########################################################################################
 
+        ################################ Modeling Layers ##########################################
         # getting 4 of the modeled passages - 3 used for the start & end spans (M0, M1, M2), & 1 extra
         # used for the arithmetic portion (M3)
         # The recurrent modeling layers. Since these layers share the same parameters,
@@ -217,7 +221,7 @@ class NumericallyAugmentedQaNet(Model):
         question_weights = self._question_weights_predictor(encoded_question).squeeze(-1)
         question_weights = masked_softmax(question_weights, question_mask)
         question_vector = util.weighted_sum(encoded_question, question_weights)
-
+        ########################################################################################
 
         # if multiple abilities (should always be the case), predict the answer type based on
         # the passage and question vector encodings (see 'Answer type prediction' in DROP paper)
@@ -229,7 +233,7 @@ class NumericallyAugmentedQaNet(Model):
             best_answer_ability = torch.argmax(answer_ability_log_probs, 1)
 
         # COUNTING: pass the passage encoding through a FF layer that outputs class probabilites from 0-9,
-        # gets the best number counts for 
+        # gets the best number counts for
         if "counting" in self.answering_abilities:
             # Shape: (batch_size, 10)
             count_number_logits = self._count_number_predictor(passage_vector)
@@ -302,16 +306,27 @@ class NumericallyAugmentedQaNet(Model):
 
         if "addition_subtraction" in self.answering_abilities:
             # Shape: (batch_size, # of numbers in the passage)
+            # [5, 10, -1]
             number_indices = number_indices.squeeze(-1)
+
+            # the last element in number_indices is always -1 (artificial)
+            # [1, 1, 0]
             number_mask = (number_indices != -1).long()
+            # [5, 10, 0]
             clamped_number_indices = util.replace_masked_values(number_indices, number_mask, 0)
+
+            # M0 and M3
+            # Maybe Shape: (batch_size, 2 * modeled_passage_output_dim)
             encoded_passage_for_numbers = torch.cat([modeled_passage_list[0], modeled_passage_list[3]], dim=-1)
+
             # Shape: (batch_size, # of numbers in the passage, encoding_dim)
             encoded_numbers = torch.gather(
                     encoded_passage_for_numbers,
                     1,
                     clamped_number_indices.unsqueeze(-1).expand(-1, -1, encoded_passage_for_numbers.size(-1)))
+
             # Shape: (batch_size, # of numbers in the passage)
+            # Maybe Shape: (batch_size, # of numbers in the passage, 3 * modeled_passage_output_dim)
             encoded_numbers = torch.cat(
                     [encoded_numbers, passage_vector.unsqueeze(1).repeat(1, encoded_numbers.size(1), 1)], -1)
 
@@ -319,10 +334,13 @@ class NumericallyAugmentedQaNet(Model):
             number_sign_logits = self._number_sign_predictor(encoded_numbers)
             number_sign_log_probs = torch.nn.functional.log_softmax(number_sign_logits, -1)
 
+            # use best_signs_for_numbers to get the answer
             # Shape: (batch_size, # of numbers in passage).
             best_signs_for_numbers = torch.argmax(number_sign_log_probs, -1)
             # For padding numbers, the best sign masked as 0 (not included).
             best_signs_for_numbers = util.replace_masked_values(best_signs_for_numbers, number_mask, 0)
+
+            ########################### for log prob ###########################
             # Shape: (batch_size, # of numbers in passage)
             best_signs_log_probs = torch.gather(
                     number_sign_log_probs, 2, best_signs_for_numbers.unsqueeze(-1)).squeeze(-1)
@@ -488,6 +506,7 @@ class NumericallyAugmentedQaNet(Model):
                     answer_json["value"] = predicted_answer
                     answer_json["spans"] = [(start_offset, end_offset)]
                 elif predicted_ability_str == "addition_subtraction":  # plus_minus combination answer
+                    # calculate answer
                     answer_json["answer_type"] = "arithmetic"
                     original_numbers = metadata[i]['original_numbers']
                     sign_remap = {0: 0, 1: 1, 2: -1}
