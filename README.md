@@ -8,6 +8,10 @@
     <li><a href="https://github.com/BBBBlarry">Blarry Wang</a></li>
 </ul>
 
+<h2>Goals</h2>
+<ul>
+    <li>Try ELMo.</li>
+</ul>
 <h2>Developer Notes</h2>
 <ul>
     <li>Be sure to update your allennlp so that we can get the DROP dataset/models: <code>pip install allennlp --upgrade</code></li>
