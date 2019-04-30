@@ -23,7 +23,7 @@
                 "lowercase_tokens": true
             },
             "elmo": {
-                "type" "elmo_characters"
+                "type": "elmo_characters"
             }
         },
         "passage_length_limit": 1000,
