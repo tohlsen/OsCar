@@ -6,10 +6,6 @@
                 "type": "single_id",
                 "lowercase_tokens": true
             },
-            "token_characters": {
-                "type": "characters",
-                "min_padding_length": 5
-            },
             "elmo": {
                 "type": "elmo_characters"
             }
@@ -26,9 +22,8 @@
                 "type": "single_id",
                 "lowercase_tokens": true
             },
-            "token_characters": {
-                "type": "characters",
-                "min_padding_length": 5
+            "elmo": {
+                "type" "elmo_characters"
             }
         },
         "passage_length_limit": 1000,
@@ -60,26 +55,12 @@
                     "embedding_dim": 300,
                     "trainable": false
                 },
-                "token_characters": {
-                    "type": "character_encoding",
-                    "embedding": {
-                        "embedding_dim": 64
-                    },
-                    "encoder": {
-                        "type": "cnn",
-                        "embedding_dim": 64,
-                        "num_filters": 200,
-                        "ngram_filter_sizes": [
-                            5
-                        ]
-                    },
-                },
                 "elmo":{
                     "type": "elmo_token_embedder",
                     "options_file": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json",
                     "weight_file": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
                     "do_layer_norm": false,
-                    "dropout": 0.0
+                    "dropout": 0.2
                 },
             }
         },
