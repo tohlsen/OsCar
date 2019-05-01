@@ -54,9 +54,7 @@ class NaqanetPredictor(Predictor):
         NOTE: We can prob do something with passage_question_attention if we were to be doing something with attention.
         """
         answer = outputs["answer"]
-        answer_type = answer["answer_type"]
-        answer_text = answer[answer_type]
-        return "Answer type: " + answer_type + "\t Answer: " + str(answer_text) + "\n"
+        return str(answer) + "\n"
 
     @overrides
     def _json_to_instance(self, json_dict: JsonDict) -> Instance:
