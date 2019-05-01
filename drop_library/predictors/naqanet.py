@@ -30,7 +30,7 @@ class NaqanetPredictor(Predictor):
     @overrides
     def load_line(self, line: str) -> JsonDict:
         sample = line.strip().split("\t")
-        json_dict＝ {"passage": sample[0], "question": sample[1]}
+        json_dict = {"passage": sample[0], "question": sample[1]}
         return json_dict
 
     @overrides
