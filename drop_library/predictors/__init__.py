@@ -1,0 +1,1 @@
+from drop_library.predictors.naqanet import NaqanetPredictor
