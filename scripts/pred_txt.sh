@@ -8,5 +8,4 @@ allennlp predict $1 $2 \
   --output-file $3 \
   --predictor naqanet \
   --include-package drop_library \
-  --use-dataset-reader \
   --silent
