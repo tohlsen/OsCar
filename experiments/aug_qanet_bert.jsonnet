@@ -17,7 +17,7 @@
                 "use_starting_offsets": false
             },
         },
-        "passage_length_limit": 200,
+        "passage_length_limit": 330,
         "question_length_limit": 50,
         "skip_when_all_empty": ["passage_span", "question_span", "addition_subtraction", "counting"],
         "instance_format": "drop"
@@ -54,10 +54,10 @@
         },
         "only_include_pretrained_words": true
     },
-    "train_data_path": "drop_dataset/drop_dataset_train.json",
-    "validation_data_path": "drop_dataset/drop_dataset_dev.json",
+    "train_data_path": std.extVar("DROP_TRAIN_DATA_PATH"),
+    "validation_data_path": std.extVar("DROP_DEV_DATA_PATH"),
     "model": {
-        "type": "naqanet",
+        "type": "augmented_qanet",
         "text_field_embedder": {
             "allow_unmatched_keys": true,
             "embedder_to_indexer_map": {
@@ -162,7 +162,7 @@
         "max_instances_in_memory": 600
     },
     "trainer": {
-        "num_epochs": 5,
+        "num_epochs": 50,
         "grad_norm": 5,
         "patience": 10,
         "validation_metric": "+f1",

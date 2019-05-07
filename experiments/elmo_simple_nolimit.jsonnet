@@ -6,19 +6,10 @@
                 "type": "single_id",
                 "lowercase_tokens": true
             },
-            "token_characters": {
-                "type": "characters",
-                "min_padding_length": 5
-            },
-            "bert": {
-                "type": "bert-pretrained",
-                "pretrained_model": "bert-base-uncased",
-                "do_lowercase": true,
-                "use_starting_offsets": false
+            "elmo": {
+                "type": "elmo_characters"
             },
         },
-        "passage_length_limit": 200,
-        "question_length_limit": 50,
         "skip_when_all_empty": ["passage_span", "question_span", "addition_subtraction", "counting"],
         "instance_format": "drop"
     },
@@ -29,22 +20,14 @@
                 "type": "single_id",
                 "lowercase_tokens": true
             },
-            "token_characters": {
-                "type": "characters",
-                "min_padding_length": 5
-            },
-            "bert": {
-                "type": "bert-pretrained",
-                "pretrained_model": "bert-base-uncased",
-                "do_lowercase": true,
-                "use_starting_offsets": false
-            },
+            "elmo": {
+                "type": "elmo_characters"
+            }
         },
-        "passage_length_limit": 400,
-        "question_length_limit": 50,
         "skip_when_all_empty": [],
         "instance_format": "drop"
     },
+
     "vocabulary": {
         "min_count": {
             "token_characters": 200
@@ -54,17 +37,13 @@
         },
         "only_include_pretrained_words": true
     },
+
     "train_data_path": "drop_dataset/drop_dataset_train.json",
     "validation_data_path": "drop_dataset/drop_dataset_dev.json",
+    
     "model": {
         "type": "naqanet",
         "text_field_embedder": {
-            "allow_unmatched_keys": true,
-            "embedder_to_indexer_map": {
-                "tokens": ["tokens"],
-                "token_characters": ["token_characters"],
-                "bert": ["bert", "bert-offsets"],
-            },
             "token_embedders": {
                 "tokens": {
                     "type": "embedding",
@@ -72,25 +51,12 @@
                     "embedding_dim": 300,
                     "trainable": false
                 },
-                "token_characters": {
-                    "type": "character_encoding",
-                    "embedding": {
-                        "embedding_dim": 64
-                    },
-                    "encoder": {
-                        "type": "cnn",
-                        "embedding_dim": 64,
-                        "num_filters": 200,
-                        "ngram_filter_sizes": [
-                            5
-                        ]
-                    },
-                },
-                "bert": {
-                    "type": "bert-pretrained",
-                    "pretrained_model": "bert-base-uncased",
-                    "requires_grad": false,
-                    "top_layer_only": true
+                "elmo": {
+                    "type": "elmo_token_embedder",
+                    "options_file": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x1024_128_2048cnn_1xhighway/elmo_2x1024_128_2048cnn_1xhighway_options.json",                    
+                    "weight_file": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x1024_128_2048cnn_1xhighway/elmo_2x1024_128_2048cnn_1xhighway_weights.hdf5",
+                    "do_layer_norm": false,
+                    "dropout": 0.5
                 }
             }
         },
@@ -121,7 +87,7 @@
             "hidden_dim": 128,
             "attention_projection_dim": 128,
             "feedforward_hidden_dim": 128,
-            "num_blocks": 2,
+            "num_blocks": 1,
             "num_convs_per_block": 2,
             "conv_kernel_size": 5,
             "num_attention_heads": 8,
@@ -158,13 +124,14 @@
                 "num_tokens"
             ]
         ],
-        "batch_size": 16,
-        "max_instances_in_memory": 600
+        "batch_size": 8,
+        "max_instances_in_memory": 300
     },
     "trainer": {
         "num_epochs": 5,
         "grad_norm": 5,
         "patience": 10,
+        "num_serialized_models_to_keep": 1,
         "validation_metric": "+f1",
         "cuda_device": 0,
         "optimizer": {
