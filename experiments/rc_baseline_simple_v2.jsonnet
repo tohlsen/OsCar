@@ -1,6 +1,6 @@
 {
     "dataset_reader": {
-        "type": "drop_rc_v1",
+        "type": "drop_rc_v2",
         "token_indexers": {
             "tokens": {
                 "type": "single_id",
@@ -17,7 +17,7 @@
         "instance_format": "drop"
     },
     "validation_dataset_reader": {
-        "type": "drop_rc_v1",
+        "type": "drop_rc_v2",
         "token_indexers": {
             "tokens": {
                 "type": "single_id",
@@ -46,7 +46,7 @@
 
     "train_data_path": "drop_dataset/drop_dataset_train.json",
     "validation_data_path": "drop_dataset/drop_dataset_dev.json",
-
+    
     "model": {
         "type": "naqanet",
         "text_field_embedder": {
@@ -141,7 +141,7 @@
         "max_instances_in_memory": 600
     },
     "trainer": {
-        "num_epochs": 5,
+        "num_epochs": 10,
         "grad_norm": 5,
         "patience": 10,
         "num_serialized_models_to_keep": 1,
