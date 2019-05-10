@@ -332,6 +332,8 @@ class NumericallyAugmentedQaNet(Model):
 
             # Shape: (batch_size, # of numbers in the passage, 3)
             number_sign_logits = self._number_sign_predictor(encoded_numbers)
+            # The log probabilities of each sign for each number
+            # Shape: (batch_size, # of numbers in the passage, 3)
             number_sign_log_probs = torch.nn.functional.log_softmax(number_sign_logits, -1)
 
             # use best_signs_for_numbers to get the answer

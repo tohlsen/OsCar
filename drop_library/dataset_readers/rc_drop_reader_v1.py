@@ -31,8 +31,8 @@ WORD_NUMBER_MAP = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
                    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19}
 
 
-@DatasetReader.register("drop_rc")
-class DropReader(DatasetReader):
+@DatasetReader.register("drop_rc_v1")
+class RCDropReaderV1(DatasetReader):
     """
     Reads a JSON-formatted DROP dataset file and returns instances in a few different possible
     formats.  The input format is complicated; see the test fixture for an example of what it looks
