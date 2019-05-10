@@ -23,7 +23,7 @@
         "instance_format": "drop"
     },
     "validation_dataset_reader": {
-        "type": "drop",
+        "type": "drop_rc_v2",
         "token_indexers": {
             "tokens": {
                 "type": "single_id",
