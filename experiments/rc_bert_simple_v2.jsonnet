@@ -1,6 +1,6 @@
 {
     "dataset_reader": {
-        "type": "drop_rc_v1",
+        "type": "drop_rc_v2",
         "token_indexers": {
             "tokens": {
                 "type": "single_id",
@@ -9,6 +9,12 @@
             "token_characters": {
                 "type": "characters",
                 "min_padding_length": 5
+            },
+            "bert": {
+                "type": "bert-pretrained",
+                "pretrained_model": "bert-base-uncased",
+                "do_lowercase": true,
+                "use_starting_offsets": false
             },
         },
         "passage_length_limit": 200,
@@ -26,14 +32,19 @@
             "token_characters": {
                 "type": "characters",
                 "min_padding_length": 5
-            }
+            },
+            "bert": {
+                "type": "bert-pretrained",
+                "pretrained_model": "bert-base-uncased",
+                "do_lowercase": true,
+                "use_starting_offsets": false
+            },
         },
-        "passage_length_limit": 500,
-        "question_length_limit": 100,
+        "passage_length_limit": 400,
+        "question_length_limit": 50,
         "skip_when_all_empty": [],
         "instance_format": "drop"
     },
-
     "vocabulary": {
         "min_count": {
             "token_characters": 200
@@ -43,13 +54,17 @@
         },
         "only_include_pretrained_words": true
     },
-
     "train_data_path": "drop_dataset/drop_dataset_train.json",
     "validation_data_path": "drop_dataset/drop_dataset_dev.json",
-
     "model": {
         "type": "naqanet",
         "text_field_embedder": {
+            "allow_unmatched_keys": true,
+            "embedder_to_indexer_map": {
+                "tokens": ["tokens"],
+                "token_characters": ["token_characters"],
+                "bert": ["bert", "bert-offsets"],
+            },
             "token_embedders": {
                 "tokens": {
                     "type": "embedding",
@@ -70,6 +85,12 @@
                             5
                         ]
                     },
+                },
+                "bert": {
+                    "type": "bert-pretrained",
+                    "pretrained_model": "bert-base-uncased",
+                    "requires_grad": false,
+                    "top_layer_only": true
                 }
             }
         },
@@ -100,7 +121,7 @@
             "hidden_dim": 128,
             "attention_projection_dim": 128,
             "feedforward_hidden_dim": 128,
-            "num_blocks": 1,
+            "num_blocks": 2,
             "num_convs_per_block": 2,
             "conv_kernel_size": 5,
             "num_attention_heads": 8,
@@ -144,7 +165,6 @@
         "num_epochs": 5,
         "grad_norm": 5,
         "patience": 10,
-        "num_serialized_models_to_keep": 1,
         "validation_metric": "+f1",
         "cuda_device": 0,
         "optimizer": {

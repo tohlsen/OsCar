@@ -1,6 +1,6 @@
 {
     "dataset_reader": {
-        "type": "drop_rc",
+        "type": "drop_rc_v1",
         "token_indexers": {
             "tokens": {
                 "type": "single_id",
