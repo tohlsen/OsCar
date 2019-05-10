@@ -162,9 +162,10 @@
         "max_instances_in_memory": 600
     },
     "trainer": {
-        "num_epochs": 5,
+        "num_epochs": 10,
         "grad_norm": 5,
         "patience": 10,
+        "num_serialized_models_to_keep": 1,
         "validation_metric": "+f1",
         "cuda_device": 0,
         "optimizer": {

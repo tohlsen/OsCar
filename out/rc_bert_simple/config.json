@@ -1,6 +1,6 @@
 {
     "dataset_reader": {
-        "type": "drop_rc",
+        "type": "drop_rc_v1",
         "instance_format": "drop",
         "passage_length_limit": 200,
         "question_length_limit": 50,
@@ -149,6 +149,7 @@
             "decay": 0.9999
         },
         "num_epochs": 10,
+        "num_serialized_models_to_keep": 1,
         "optimizer": {
             "type": "adam",
             "betas": [

@@ -148,7 +148,8 @@
             "type": "exponential",
             "decay": 0.9999
         },
-        "num_epochs": 5,
+        "num_epochs": 10,
+        "num_serialized_models_to_keep": 1,
         "optimizer": {
             "type": "adam",
             "betas": [
