@@ -39,7 +39,7 @@
         "pretrained_files": {
             "tokens": "https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip"
         },
-        "only_include_pretrained_words": true
+        "only_include_pretrained_words": false
     },
 
     "train_data_path": "drop_dataset/drop_dataset_train.json",
@@ -64,7 +64,7 @@
                 }
             }
         },
-        "num_highway_layers": 2,
+        "num_highway_layers": 1,
         "phrase_layer": {
             "type": "qanet_encoder",
             "input_dim": 128,
