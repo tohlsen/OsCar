@@ -17,7 +17,7 @@
                 "use_starting_offsets": false
             },
         },
-        "passage_length_limit": 400,
+        "passage_length_limit": 200,
         "question_length_limit": 50,
         "skip_when_all_empty": ["passage_span", "question_span", "addition_subtraction", "counting"],
         "instance_format": "drop"
