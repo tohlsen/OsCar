@@ -433,10 +433,10 @@ class RCDropReaderV2(DatasetReader):
         word = word.strip(punctuations)
         # some words may contain the comma as deliminator
         word = word.replace(",", "")
+        numbers = []
         # word2num will convert hundred, thousand ... and point to number, but we skip it.
         if word in ["hundred", "thousand", "million", "billion", "trillion", "point"]:
-            return None
-        numbers = []
+            return numbers
         try:
             numbers += [word_to_num(word)]
         except ValueError:
