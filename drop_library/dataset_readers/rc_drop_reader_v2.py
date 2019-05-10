@@ -243,8 +243,9 @@ class RCDropReaderV2(DatasetReader):
             target_numbers = []
             # `answer_texts` is a list of valid answers.
             for answer_text in answer_texts:
-                number = self.convert_word_to_number(answer_text)
-                if number is not None:
+            # ADDED: including list of numbers rather than a single number e.g. 10-7
+                numbers = self.convert_word_to_number(answer_text)
+                for number in numbers:
                     target_numbers.append(number)
             valid_signs_for_add_sub_expressions: List[List[int]] = []
             valid_counts: List[int] = []

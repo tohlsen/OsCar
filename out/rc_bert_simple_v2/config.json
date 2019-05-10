@@ -172,7 +172,7 @@
         }
     },
     "validation_dataset_reader": {
-        "type": "drop",
+        "type": "drop_rc_v2",
         "instance_format": "drop",
         "passage_length_limit": 400,
         "question_length_limit": 50,

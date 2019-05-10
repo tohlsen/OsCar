@@ -26,8 +26,35 @@ def old_reader_get_count(word):
     else:
         return 0
 
-# returning count of numbers (new DatasetReader)
-def new_reader_get_count(word):
+# returning count of numbers (new DatasetReader v1)
+def new_reader_v1_get_count(word):
+    # strip all punctuations from the sides of the word, except for the negative sign
+    punctruations = string.punctuation.replace('-', '')
+    word = word.strip(punctruations)
+    # some words may contain the comma as deliminator
+    word = word.replace(",", "")
+    number = None
+    # word2num will convert hundred, thousand ... to number, but we skip it.
+    if word in ["hundred", "thousand", "million", "billion", "trillion"]:
+        number = None
+    try:
+        number = word_to_num(word)
+    except ValueError:
+        try:
+            number = int(word)
+        except ValueError:
+            try:
+                number = float(word)
+            except ValueError:
+                number = None
+
+    if number is not None:
+        return 1
+    else:
+        return 0
+
+# returning count of numbers (new DatasetReader v2)
+def new_reader_v2_get_count(word):
     # strip all punctuations from the sides of the word, except for the negative sign
     punctuations = string.punctuation.replace('-', '')
     word = word.strip(punctuations)
@@ -49,7 +76,7 @@ def new_reader_get_count(word):
                 if "-" in word:
                     word_chunks = word.split("-")
                     for chunk in word_chunks:
-                        converted_nums, _ = new_reader_get_count(chunk)
+                        converted_nums, _ = new_reader_v2_get_count(chunk)
                         numbers += converted_nums
     return numbers, len(numbers)
 
@@ -59,7 +86,8 @@ def main():
     dev_file_path = "/projects/instr/19sp/cse481n/OsCar/OsCar/drop_dataset/drop_dataset_dev.json"
 
     old_reader_count = 0
-    new_reader_count = 0
+    new_reader_v1_count = 0
+    new_reader_v2_count = 0
 
     with open(train_file_path) as file_:
         train_dataset = json.load(file_)
@@ -71,8 +99,9 @@ def main():
 
             # get all number counts from each passage
             for passage_word in passage_words:
-                _, temp_count = new_reader_get_count(passage_word)
-                new_reader_count += temp_count
+                new_reader_v1_count += new_reader_v1_get_count(passage_word)
+                _, temp_count = new_reader_v2_get_count(passage_word)
+                new_reader_v2_count += temp_count
                 old_reader_count += old_reader_get_count(passage_word)
 
             # for each passage, iterate through all the questions
@@ -83,13 +112,15 @@ def main():
 
                 # get all number counts from each question
                 for question_word in question_text:
-                    _, temp_count = new_reader_get_count(question_word)
-                    new_reader_count += temp_count
+                    new_reader_v1_count += new_reader_v1_get_count(question_word)
+                    _, temp_count = new_reader_v2_get_count(question_word)
+                    new_reader_v2_count += temp_count
                     old_reader_count += old_reader_get_count(question_word)
 
     # print out results
     print("Old DatasetReader number count: ", old_reader_count)
-    print("New DatasetReader number count: ", new_reader_count)
+    print("New DatasetReader v1 number count: ", new_reader_v1_count)
+    print("New DatasetReader v2 number count: ", new_reader_v2_count)
 
 if __name__ == '__main__':
     main()
