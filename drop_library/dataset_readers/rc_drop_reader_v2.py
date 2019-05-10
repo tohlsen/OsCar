@@ -449,7 +449,7 @@ class RCDropReaderV2(DatasetReader):
                     if "-" in word:
                         word_chunks = word.split("-")
                         for chunk in word_chunks:
-                            converted_nums = self.convert_word_to_number(chunk)
+                            converted_nums = RCDropReaderV2.convert_word_to_number(chunk)
                             numbers += converted_nums
         return numbers
 
