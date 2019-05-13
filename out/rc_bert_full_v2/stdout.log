@@ -1,0 +1,1360 @@
+2019-05-12 21:34:08,818 - INFO - allennlp.common.params - evaluate_on_test = False
+2019-05-12 21:34:08,819 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'instance_format': 'drop', 'passage_length_limit': 200, 'question_length_limit': 50, 'skip_when_all_empty': ['passage_span', 'question_span', 'addition_subtraction', 'counting'], 'token_indexers': {'bert': {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False}, 'token_characters': {'min_padding_length': 5, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'drop_rc_v2'} and extras set()
+2019-05-12 21:34:08,819 - INFO - allennlp.common.params - dataset_reader.type = drop_rc_v2
+2019-05-12 21:34:08,819 - INFO - allennlp.common.from_params - instantiating class <class 'drop_library.dataset_readers.rc_drop_reader_v2.RCDropReaderV2'> from params {'instance_format': 'drop', 'passage_length_limit': 200, 'question_length_limit': 50, 'skip_when_all_empty': ['passage_span', 'question_span', 'addition_subtraction', 'counting'], 'token_indexers': {'bert': {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False}, 'token_characters': {'min_padding_length': 5, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras set()
+2019-05-12 21:34:08,820 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False} and extras set()
+2019-05-12 21:34:08,820 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.type = bert-pretrained
+2019-05-12 21:34:08,820 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.wordpiece_indexer.PretrainedBertIndexer from params {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'use_starting_offsets': False} and extras set()
+2019-05-12 21:34:08,821 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.pretrained_model = bert-base-uncased
+2019-05-12 21:34:08,821 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.use_starting_offsets = False
+2019-05-12 21:34:08,821 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.do_lowercase = True
+2019-05-12 21:34:08,821 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.never_lowercase = None
+2019-05-12 21:34:08,821 - INFO - allennlp.common.params - dataset_reader.token_indexers.bert.max_pieces = 512
+2019-05-12 21:34:09,254 - INFO - pytorch_pretrained_bert.tokenization - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /homes/iws/patelr3/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2019-05-12 21:34:09,295 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'min_padding_length': 5, 'type': 'characters'} and extras set()
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.type = characters
+2019-05-12 21:34:09,296 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {'min_padding_length': 5} and extras set()
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.namespace = token_characters
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.start_tokens = None
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.end_tokens = None
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.min_padding_length = 5
+2019-05-12 21:34:09,296 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras set()
+2019-05-12 21:34:09,296 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.type = single_id
+2019-05-12 21:34:09,297 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras set()
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.namespace = tokens
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.lowercase_tokens = True
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.start_tokens = None
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.end_tokens = None
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.lazy = False
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.passage_length_limit = 200
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.question_length_limit = 50
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.skip_when_all_empty = ['passage_span', 'question_span', 'addition_subtraction', 'counting']
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.instance_format = drop
+2019-05-12 21:34:09,297 - INFO - allennlp.common.params - dataset_reader.relaxed_span_match_for_finding_labels = True
+2019-05-12 21:34:09,700 - INFO - allennlp.training.util - Using a separate dataset reader to load validation and test data.
+2019-05-12 21:34:09,700 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'instance_format': 'drop', 'passage_length_limit': 400, 'question_length_limit': 50, 'skip_when_all_empty': [], 'token_indexers': {'bert': {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False}, 'token_characters': {'min_padding_length': 5, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'drop_rc_v2'} and extras set()
+2019-05-12 21:34:09,700 - INFO - allennlp.common.params - validation_dataset_reader.type = drop_rc_v2
+2019-05-12 21:34:09,701 - INFO - allennlp.common.from_params - instantiating class <class 'drop_library.dataset_readers.rc_drop_reader_v2.RCDropReaderV2'> from params {'instance_format': 'drop', 'passage_length_limit': 400, 'question_length_limit': 50, 'skip_when_all_empty': [], 'token_indexers': {'bert': {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False}, 'token_characters': {'min_padding_length': 5, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras set()
+2019-05-12 21:34:09,701 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'type': 'bert-pretrained', 'use_starting_offsets': False} and extras set()
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.type = bert-pretrained
+2019-05-12 21:34:09,701 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.wordpiece_indexer.PretrainedBertIndexer from params {'do_lowercase': True, 'pretrained_model': 'bert-base-uncased', 'use_starting_offsets': False} and extras set()
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.pretrained_model = bert-base-uncased
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.use_starting_offsets = False
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.do_lowercase = True
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.never_lowercase = None
+2019-05-12 21:34:09,701 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.bert.max_pieces = 512
+2019-05-12 21:34:10,004 - INFO - pytorch_pretrained_bert.tokenization - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /homes/iws/patelr3/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2019-05-12 21:34:10,040 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'min_padding_length': 5, 'type': 'characters'} and extras set()
+2019-05-12 21:34:10,040 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.token_characters.type = characters
+2019-05-12 21:34:10,040 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {'min_padding_length': 5} and extras set()
+2019-05-12 21:34:10,040 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.token_characters.namespace = token_characters
+2019-05-12 21:34:10,040 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.token_characters.start_tokens = None
+2019-05-12 21:34:10,040 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.token_characters.end_tokens = None
+2019-05-12 21:34:10,040 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.token_characters.min_padding_length = 5
+2019-05-12 21:34:10,041 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras set()
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.tokens.type = single_id
+2019-05-12 21:34:10,041 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras set()
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.tokens.namespace = tokens
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.tokens.lowercase_tokens = True
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.tokens.start_tokens = None
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.token_indexers.tokens.end_tokens = None
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.lazy = False
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.passage_length_limit = 400
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.question_length_limit = 50
+2019-05-12 21:34:10,041 - INFO - allennlp.common.params - validation_dataset_reader.skip_when_all_empty = []
+2019-05-12 21:34:10,042 - INFO - allennlp.common.params - validation_dataset_reader.instance_format = drop
+2019-05-12 21:34:10,042 - INFO - allennlp.common.params - validation_dataset_reader.relaxed_span_match_for_finding_labels = True
+2019-05-12 21:34:10,042 - INFO - allennlp.common.params - train_data_path = drop_dataset/drop_dataset_train.json
+2019-05-12 21:34:10,042 - INFO - allennlp.training.util - Reading training data from drop_dataset/drop_dataset_train.json
+2019-05-12 21:34:10,043 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Reading file at drop_dataset/drop_dataset_train.json
+2019-05-12 21:34:11,639 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Reading the dataset
+2019-05-12 21:36:31,498 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Skipped 10147 questions, kept 67262 questions.
+2019-05-12 21:36:31,520 - INFO - allennlp.common.params - validation_data_path = drop_dataset/drop_dataset_dev.json
+2019-05-12 21:36:31,521 - INFO - allennlp.training.util - Reading validation data from drop_dataset/drop_dataset_dev.json
+2019-05-12 21:36:31,521 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Reading file at drop_dataset/drop_dataset_dev.json
+2019-05-12 21:36:31,886 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Reading the dataset
+2019-05-12 21:36:52,242 - INFO - drop_library.dataset_readers.rc_drop_reader_v2 - Skipped 0 questions, kept 9536 questions.
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - test_data_path = None
+2019-05-12 21:36:52,247 - INFO - allennlp.training.trainer - From dataset instances, train, validation will be considered for vocabulary creation.
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.type = None
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.extend = False
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.directory_path = None
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.max_vocab_size = None
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.non_padded_namespaces = ('*tags', '*labels')
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.min_pretrained_embeddings = None
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.only_include_pretrained_words = True
+2019-05-12 21:36:52,247 - INFO - allennlp.common.params - vocabulary.tokens_to_add = None
+2019-05-12 21:36:52,247 - INFO - allennlp.data.vocabulary - Fitting token dictionary from dataset.
+2019-05-12 21:38:03,618 - INFO - allennlp.data.vocabulary - Reading pretrained tokens from: https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip
+2019-05-12 21:38:34,848 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.models.model.Model'> from params {'answering_abilities': ['passage_span_extraction', 'question_span_extraction', 'addition_subtraction', 'counting'], 'dropout_prob': 0.1, 'matrix_attention_layer': {'combination': 'x,y,x*y', 'tensor_1_dim': 128, 'tensor_2_dim': 128, 'type': 'linear'}, 'modeling_layer': {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 5, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 6, 'num_convs_per_block': 2, 'type': 'qanet_encoder'}, 'num_highway_layers': 2, 'phrase_layer': {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 7, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 1, 'num_convs_per_block': 4, 'type': 'qanet_encoder'}, 'regularizer': [['.*', {'alpha': 1e-07, 'type': 'l2'}]], 'text_field_embedder': {'allow_unmatched_keys': True, 'embedder_to_indexer_map': {'bert': ['bert', 'bert-offsets'], 'token_characters': ['token_characters'], 'tokens': ['tokens']}, 'token_embedders': {'bert': {'pretrained_model': 'bert-base-uncased', 'requires_grad': False, 'top_layer_only': True, 'type': 'bert-pretrained'}, 'token_characters': {'embedding': {'embedding_dim': 64}, 'encoder': {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 300, 'pretrained_file': 'https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip', 'trainable': False, 'type': 'embedding'}}}, 'type': 'naqanet'} and extras {'vocab'}
+2019-05-12 21:38:34,848 - INFO - allennlp.common.params - model.type = naqanet
+2019-05-12 21:38:34,849 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.models.reading_comprehension.naqanet.NumericallyAugmentedQaNet'> from params {'answering_abilities': ['passage_span_extraction', 'question_span_extraction', 'addition_subtraction', 'counting'], 'dropout_prob': 0.1, 'matrix_attention_layer': {'combination': 'x,y,x*y', 'tensor_1_dim': 128, 'tensor_2_dim': 128, 'type': 'linear'}, 'modeling_layer': {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 5, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 6, 'num_convs_per_block': 2, 'type': 'qanet_encoder'}, 'num_highway_layers': 2, 'phrase_layer': {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 7, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 1, 'num_convs_per_block': 4, 'type': 'qanet_encoder'}, 'regularizer': [['.*', {'alpha': 1e-07, 'type': 'l2'}]], 'text_field_embedder': {'allow_unmatched_keys': True, 'embedder_to_indexer_map': {'bert': ['bert', 'bert-offsets'], 'token_characters': ['token_characters'], 'tokens': ['tokens']}, 'token_embedders': {'bert': {'pretrained_model': 'bert-base-uncased', 'requires_grad': False, 'top_layer_only': True, 'type': 'bert-pretrained'}, 'token_characters': {'embedding': {'embedding_dim': 64}, 'encoder': {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 300, 'pretrained_file': 'https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip', 'trainable': False, 'type': 'embedding'}}}} and extras {'vocab'}
+2019-05-12 21:38:34,849 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.text_field_embedders.text_field_embedder.TextFieldEmbedder'> from params {'allow_unmatched_keys': True, 'embedder_to_indexer_map': {'bert': ['bert', 'bert-offsets'], 'token_characters': ['token_characters'], 'tokens': ['tokens']}, 'token_embedders': {'bert': {'pretrained_model': 'bert-base-uncased', 'requires_grad': False, 'top_layer_only': True, 'type': 'bert-pretrained'}, 'token_characters': {'embedding': {'embedding_dim': 64}, 'encoder': {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 300, 'pretrained_file': 'https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip', 'trainable': False, 'type': 'embedding'}}} and extras {'vocab'}
+2019-05-12 21:38:34,849 - INFO - allennlp.common.params - model.text_field_embedder.type = basic
+2019-05-12 21:38:34,849 - INFO - allennlp.common.params - model.text_field_embedder.allow_unmatched_keys = True
+2019-05-12 21:38:34,849 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'pretrained_model': 'bert-base-uncased', 'requires_grad': False, 'top_layer_only': True, 'type': 'bert-pretrained'} and extras {'vocab'}
+2019-05-12 21:38:34,849 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.bert.type = bert-pretrained
+2019-05-12 21:38:34,849 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.token_embedders.bert_token_embedder.PretrainedBertEmbedder'> from params {'pretrained_model': 'bert-base-uncased', 'requires_grad': False, 'top_layer_only': True} and extras {'vocab'}
+2019-05-12 21:38:34,850 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.bert.pretrained_model = bert-base-uncased
+2019-05-12 21:38:34,850 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.bert.requires_grad = False
+2019-05-12 21:38:34,850 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.bert.top_layer_only = True
+2019-05-12 21:38:35,193 - INFO - pytorch_pretrained_bert.modeling - loading archive file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz from cache at /homes/iws/patelr3/.pytorch_pretrained_bert/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba
+2019-05-12 21:38:35,194 - INFO - pytorch_pretrained_bert.modeling - extracting archive file /homes/iws/patelr3/.pytorch_pretrained_bert/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba to temp dir /tmp/tmpov84nq7w
+2019-05-12 21:38:38,847 - INFO - pytorch_pretrained_bert.modeling - Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+2019-05-12 21:38:40,523 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding': {'embedding_dim': 64}, 'encoder': {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200, 'type': 'cnn'}, 'type': 'character_encoding'} and extras {'vocab'}
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.type = character_encoding
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.num_embeddings = None
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.vocab_namespace = token_characters
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.embedding_dim = 64
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.pretrained_file = None
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.projection_dim = None
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.trainable = True
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.padding_index = None
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.max_norm = None
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.norm_type = 2.0
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.scale_grad_by_freq = False
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.embedding.sparse = False
+2019-05-12 21:38:40,524 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2vec_encoders.seq2vec_encoder.Seq2VecEncoder'> from params {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200, 'type': 'cnn'} and extras set()
+2019-05-12 21:38:40,524 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.encoder.type = cnn
+2019-05-12 21:38:40,525 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2vec_encoders.cnn_encoder.CnnEncoder'> from params {'embedding_dim': 64, 'ngram_filter_sizes': [5], 'num_filters': 200} and extras set()
+2019-05-12 21:38:40,525 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.encoder.embedding_dim = 64
+2019-05-12 21:38:40,525 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.encoder.num_filters = 200
+2019-05-12 21:38:40,525 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.encoder.ngram_filter_sizes = [5]
+2019-05-12 21:38:40,525 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.encoder.output_dim = None
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.token_characters.dropout = 0.0
+2019-05-12 21:38:40,527 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding_dim': 300, 'pretrained_file': 'https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip', 'trainable': False, 'type': 'embedding'} and extras {'vocab'}
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.type = embedding
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.num_embeddings = None
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.vocab_namespace = tokens
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.embedding_dim = 300
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.pretrained_file = https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.840B.300d.lower.converted.zip
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.projection_dim = None
+2019-05-12 21:38:40,527 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.trainable = False
+2019-05-12 21:38:40,528 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.padding_index = None
+2019-05-12 21:38:40,528 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.max_norm = None
+2019-05-12 21:38:40,528 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.norm_type = 2.0
+2019-05-12 21:38:40,528 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.scale_grad_by_freq = False
+2019-05-12 21:38:40,528 - INFO - allennlp.common.params - model.text_field_embedder.token_embedders.tokens.sparse = False
+2019-05-12 21:38:40,531 - INFO - allennlp.modules.token_embedders.embedding - Reading pretrained embeddings from file
+2019-05-12 21:39:13,846 - INFO - allennlp.modules.token_embedders.embedding - Initializing pre-trained embedding layer
+2019-05-12 21:39:14,201 - INFO - allennlp.modules.token_embedders.embedding - Pretrained embeddings were found for 36830 out of 36832 tokens
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.num_highway_layers = 2
+2019-05-12 21:39:14,211 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2seq_encoders.seq2seq_encoder.Seq2SeqEncoder'> from params {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 7, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 1, 'num_convs_per_block': 4, 'type': 'qanet_encoder'} and extras {'vocab'}
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.phrase_layer.type = qanet_encoder
+2019-05-12 21:39:14,211 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2seq_encoders.qanet_encoder.QaNetEncoder'> from params {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 7, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 1, 'num_convs_per_block': 4} and extras {'vocab'}
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.phrase_layer.input_dim = 128
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.phrase_layer.hidden_dim = 128
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.phrase_layer.attention_projection_dim = 128
+2019-05-12 21:39:14,211 - INFO - allennlp.common.params - model.phrase_layer.feedforward_hidden_dim = 128
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.num_blocks = 1
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.num_convs_per_block = 4
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.conv_kernel_size = 7
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.num_attention_heads = 8
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.use_positional_encoding = True
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.dropout_prob = 0.1
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.layer_dropout_undecayed_prob = 0.1
+2019-05-12 21:39:14,212 - INFO - allennlp.common.params - model.phrase_layer.attention_dropout_prob = 0
+2019-05-12 21:39:14,215 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.matrix_attention.matrix_attention.MatrixAttention'> from params {'combination': 'x,y,x*y', 'tensor_1_dim': 128, 'tensor_2_dim': 128, 'type': 'linear'} and extras {'vocab'}
+2019-05-12 21:39:14,215 - INFO - allennlp.common.params - model.matrix_attention_layer.type = linear
+2019-05-12 21:39:14,216 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.matrix_attention.linear_matrix_attention.LinearMatrixAttention'> from params {'combination': 'x,y,x*y', 'tensor_1_dim': 128, 'tensor_2_dim': 128} and extras {'vocab'}
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.matrix_attention_layer.tensor_1_dim = 128
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.matrix_attention_layer.tensor_2_dim = 128
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.matrix_attention_layer.combination = x,y,x*y
+2019-05-12 21:39:14,216 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2seq_encoders.seq2seq_encoder.Seq2SeqEncoder'> from params {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 5, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 6, 'num_convs_per_block': 2, 'type': 'qanet_encoder'} and extras {'vocab'}
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.modeling_layer.type = qanet_encoder
+2019-05-12 21:39:14,216 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.modules.seq2seq_encoders.qanet_encoder.QaNetEncoder'> from params {'attention_dropout_prob': 0, 'attention_projection_dim': 128, 'conv_kernel_size': 5, 'dropout_prob': 0.1, 'feedforward_hidden_dim': 128, 'hidden_dim': 128, 'input_dim': 128, 'layer_dropout_undecayed_prob': 0.1, 'num_attention_heads': 8, 'num_blocks': 6, 'num_convs_per_block': 2} and extras {'vocab'}
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.modeling_layer.input_dim = 128
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.modeling_layer.hidden_dim = 128
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.modeling_layer.attention_projection_dim = 128
+2019-05-12 21:39:14,216 - INFO - allennlp.common.params - model.modeling_layer.feedforward_hidden_dim = 128
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.num_blocks = 6
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.num_convs_per_block = 2
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.conv_kernel_size = 5
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.num_attention_heads = 8
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.use_positional_encoding = True
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.dropout_prob = 0.1
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.layer_dropout_undecayed_prob = 0.1
+2019-05-12 21:39:14,217 - INFO - allennlp.common.params - model.modeling_layer.attention_dropout_prob = 0
+2019-05-12 21:39:14,230 - INFO - allennlp.common.params - model.dropout_prob = 0.1
+2019-05-12 21:39:14,230 - INFO - allennlp.common.params - model.regularizer = [['.*', {'alpha': 1e-07, 'type': 'l2'}]]
+2019-05-12 21:39:14,230 - INFO - allennlp.common.params - model.regularizer.0.1.type = l2
+2019-05-12 21:39:14,230 - INFO - allennlp.common.params - model.answering_abilities = ['passage_span_extraction', 'question_span_extraction', 'addition_subtraction', 'counting']
+2019-05-12 21:39:14,236 - INFO - allennlp.nn.initializers - Initializing parameters
+2019-05-12 21:39:14,237 - INFO - allennlp.nn.initializers - Done initializing parameters; the following parameters are using their default initialization from their code
+2019-05-12 21:39:14,237 - INFO - allennlp.nn.initializers -    _answer_ability_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,237 - INFO - allennlp.nn.initializers -    _answer_ability_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _answer_ability_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _answer_ability_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _count_number_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _count_number_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _count_number_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _count_number_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _embedding_proj_layer.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _embedding_proj_layer.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _encoding_proj_layer.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _encoding_proj_layer.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _highway_layer._layers.0.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _highway_layer._layers.0.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _highway_layer._layers.1.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _highway_layer._layers.1.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _matrix_attention._bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _matrix_attention._weight_vector
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.0.1.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.0.1.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.0.2.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.0.2.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.1.1.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.1.1.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.1.2.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_layers.1.2.weight
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_norm_layers.0.bias
+2019-05-12 21:39:14,238 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_norm_layers.0.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_norm_layers.1.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0._conv_norm_layers.1.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_layer._output_projection.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_layer._output_projection.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_norm_layer.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.attention_norm_layer.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward_norm_layer.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_0.feedforward_norm_layer.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.0.1.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.0.1.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.0.2.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.0.2.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.1.1.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.1.1.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.1.2.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_layers.1.2.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_norm_layers.0.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_norm_layers.0.weight
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_norm_layers.1.bias
+2019-05-12 21:39:14,239 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1._conv_norm_layers.1.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_layer._output_projection.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_layer._output_projection.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_norm_layer.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.attention_norm_layer.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward_norm_layer.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_1.feedforward_norm_layer.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.0.1.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.0.1.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.0.2.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.0.2.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.1.1.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.1.1.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.1.2.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_layers.1.2.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_norm_layers.0.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_norm_layers.0.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_norm_layers.1.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2._conv_norm_layers.1.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,240 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_layer._output_projection.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_layer._output_projection.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_norm_layer.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.attention_norm_layer.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward_norm_layer.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_2.feedforward_norm_layer.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.0.1.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.0.1.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.0.2.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.0.2.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.1.1.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.1.1.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.1.2.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_layers.1.2.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_norm_layers.0.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_norm_layers.0.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_norm_layers.1.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3._conv_norm_layers.1.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_layer._output_projection.bias
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_layer._output_projection.weight
+2019-05-12 21:39:14,241 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_norm_layer.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.attention_norm_layer.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward_norm_layer.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_3.feedforward_norm_layer.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.0.1.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.0.1.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.0.2.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.0.2.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.1.1.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.1.1.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.1.2.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_layers.1.2.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_norm_layers.0.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_norm_layers.0.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_norm_layers.1.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4._conv_norm_layers.1.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_layer._output_projection.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_layer._output_projection.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_norm_layer.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.attention_norm_layer.weight
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,242 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward_norm_layer.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_4.feedforward_norm_layer.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.0.1.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.0.1.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.0.2.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.0.2.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.1.1.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.1.1.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.1.2.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_layers.1.2.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_norm_layers.0.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_norm_layers.0.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_norm_layers.1.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5._conv_norm_layers.1.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_layer._output_projection.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_layer._output_projection.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_norm_layer.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.attention_norm_layer.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,243 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward_norm_layer.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _modeling_layer.encoder_block_5.feedforward_norm_layer.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _modeling_proj_layer.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _modeling_proj_layer.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _number_sign_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _number_sign_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _number_sign_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _number_sign_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_end_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_end_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_end_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_end_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_start_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_start_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_start_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_span_start_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_weights_predictor.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _passage_weights_predictor.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.0.1.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.0.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.0.2.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.0.2.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.1.1.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.1.1.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.1.2.bias
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.1.2.weight
+2019-05-12 21:39:14,244 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.2.1.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.2.1.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.2.2.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.2.2.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.3.1.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.3.1.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.3.2.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_layers.3.2.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.0.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.0.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.1.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.1.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.2.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.2.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.3.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0._conv_norm_layers.3.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_layer._output_projection.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_layer._output_projection.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_norm_layer.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.attention_norm_layer.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward_norm_layer.bias
+2019-05-12 21:39:14,245 - INFO - allennlp.nn.initializers -    _phrase_layer.encoder_block_0.feedforward_norm_layer.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_end_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_end_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_end_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_end_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_start_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_start_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_start_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_span_start_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_weights_predictor.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _question_weights_predictor.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.embeddings.LayerNorm.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.embeddings.LayerNorm.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.embeddings.position_embeddings.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.embeddings.token_type_embeddings.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.embeddings.word_embeddings.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.dense.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.dense.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.key.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.key.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.query.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.query.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.value.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.value.weight
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.intermediate.dense.bias
+2019-05-12 21:39:14,246 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.intermediate.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.LayerNorm.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.LayerNorm.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.dense.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.dense.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.key.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.key.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.query.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.query.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.value.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.value.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.intermediate.dense.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.intermediate.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.LayerNorm.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.LayerNorm.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.dense.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.dense.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.dense.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.key.bias
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.key.weight
+2019-05-12 21:39:14,247 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.query.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.query.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.value.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.value.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.intermediate.dense.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.intermediate.dense.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.LayerNorm.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.LayerNorm.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.dense.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.dense.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.dense.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.dense.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.key.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.key.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.query.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.query.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.value.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.value.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.intermediate.dense.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.intermediate.dense.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.LayerNorm.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.LayerNorm.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.dense.bias
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.dense.weight
+2019-05-12 21:39:14,248 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.dense.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.dense.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.key.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.key.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.query.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.query.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.value.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.value.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.intermediate.dense.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.intermediate.dense.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.LayerNorm.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.LayerNorm.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.dense.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.dense.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.dense.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.dense.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.key.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.key.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.query.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.query.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.value.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.value.weight
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.intermediate.dense.bias
+2019-05-12 21:39:14,249 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.intermediate.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.LayerNorm.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.LayerNorm.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.dense.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.dense.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.key.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.key.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.query.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.query.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.value.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.value.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.intermediate.dense.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.intermediate.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.LayerNorm.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.LayerNorm.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.dense.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.dense.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.dense.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.key.bias
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.key.weight
+2019-05-12 21:39:14,250 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.query.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.query.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.value.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.value.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.intermediate.dense.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.intermediate.dense.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.LayerNorm.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.LayerNorm.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.dense.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.dense.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.dense.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.dense.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.key.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.key.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.query.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.query.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.value.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.value.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.intermediate.dense.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.intermediate.dense.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.LayerNorm.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.LayerNorm.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.dense.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.dense.weight
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,251 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.dense.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.dense.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.key.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.key.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.query.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.query.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.value.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.value.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.intermediate.dense.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.intermediate.dense.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.LayerNorm.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.LayerNorm.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.dense.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.dense.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.dense.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.dense.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.key.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.key.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.query.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.query.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.value.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.value.weight
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.intermediate.dense.bias
+2019-05-12 21:39:14,252 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.intermediate.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.LayerNorm.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.LayerNorm.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.dense.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.dense.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.key.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.key.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.query.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.query.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.value.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.value.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.intermediate.dense.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.intermediate.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.LayerNorm.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.LayerNorm.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.dense.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.pooler.dense.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_bert.bert_model.pooler.dense.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_token_characters._embedding._module.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.bias
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.weight
+2019-05-12 21:39:14,253 - INFO - allennlp.nn.initializers -    _text_field_embedder.token_embedder_tokens.weight
+2019-05-12 21:39:14,352 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.iterators.data_iterator.DataIterator'> from params {'batch_size': 16, 'max_instances_in_memory': 600, 'sorting_keys': [['passage', 'num_tokens'], ['question', 'num_tokens']], 'type': 'bucket'} and extras set()
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.type = bucket
+2019-05-12 21:39:14,352 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.iterators.bucket_iterator.BucketIterator'> from params {'batch_size': 16, 'max_instances_in_memory': 600, 'sorting_keys': [['passage', 'num_tokens'], ['question', 'num_tokens']]} and extras set()
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.sorting_keys = [['passage', 'num_tokens'], ['question', 'num_tokens']]
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.padding_noise = 0.1
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.biggest_batch_first = False
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.batch_size = 16
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.instances_per_epoch = None
+2019-05-12 21:39:14,352 - INFO - allennlp.common.params - iterator.max_instances_in_memory = 600
+2019-05-12 21:39:14,353 - INFO - allennlp.common.params - iterator.cache_instances = False
+2019-05-12 21:39:14,353 - INFO - allennlp.common.params - iterator.track_epoch = False
+2019-05-12 21:39:14,353 - INFO - allennlp.common.params - iterator.maximum_samples_per_batch = None
+2019-05-12 21:39:14,353 - INFO - allennlp.common.params - validation_iterator = None
+2019-05-12 21:39:14,353 - INFO - allennlp.common.params - trainer.no_grad = ()
+2019-05-12 21:39:14,355 - INFO - allennlp.training.trainer - Following parameters are Frozen  (without gradient):
+2019-05-12 21:39:14,355 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.embeddings.word_embeddings.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.embeddings.position_embeddings.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.embeddings.token_type_embeddings.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.embeddings.LayerNorm.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.embeddings.LayerNorm.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.query.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.query.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.key.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.key.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.value.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.self.value.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.dense.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.dense.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.intermediate.dense.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.intermediate.dense.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.dense.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.dense.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.LayerNorm.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.0.output.LayerNorm.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.query.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.query.bias
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.key.weight
+2019-05-12 21:39:14,356 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.key.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.value.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.self.value.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.dense.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.dense.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.intermediate.dense.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.intermediate.dense.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.dense.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.dense.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.LayerNorm.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.1.output.LayerNorm.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.query.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.query.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.key.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.key.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.value.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.self.value.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.dense.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.dense.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.intermediate.dense.weight
+2019-05-12 21:39:14,357 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.intermediate.dense.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.dense.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.dense.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.LayerNorm.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.2.output.LayerNorm.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.query.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.query.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.key.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.key.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.value.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.self.value.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.dense.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.dense.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.intermediate.dense.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.intermediate.dense.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.dense.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.dense.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.LayerNorm.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.3.output.LayerNorm.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.query.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.query.bias
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.key.weight
+2019-05-12 21:39:14,358 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.key.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.value.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.self.value.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.dense.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.dense.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.intermediate.dense.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.intermediate.dense.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.dense.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.dense.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.LayerNorm.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.4.output.LayerNorm.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.query.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.query.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.key.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.key.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.value.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.self.value.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.dense.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.dense.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.intermediate.dense.weight
+2019-05-12 21:39:14,359 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.intermediate.dense.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.dense.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.dense.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.LayerNorm.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.5.output.LayerNorm.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.query.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.query.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.key.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.key.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.value.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.self.value.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.dense.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.dense.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.intermediate.dense.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.intermediate.dense.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.dense.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.dense.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.LayerNorm.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.6.output.LayerNorm.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.query.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.query.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.key.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.key.bias
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.value.weight
+2019-05-12 21:39:14,360 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.self.value.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.intermediate.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.intermediate.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.LayerNorm.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.7.output.LayerNorm.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.query.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.query.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.key.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.key.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.value.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.self.value.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.intermediate.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.intermediate.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.dense.weight
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.dense.bias
+2019-05-12 21:39:14,361 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.LayerNorm.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.8.output.LayerNorm.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.query.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.query.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.key.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.key.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.value.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.self.value.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.dense.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.dense.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.intermediate.dense.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.intermediate.dense.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.dense.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.dense.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.LayerNorm.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.9.output.LayerNorm.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.query.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.query.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.key.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.key.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.value.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.self.value.bias
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.dense.weight
+2019-05-12 21:39:14,362 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.intermediate.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.intermediate.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.LayerNorm.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.10.output.LayerNorm.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.query.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.query.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.key.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.key.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.value.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.self.value.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.LayerNorm.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.attention.output.LayerNorm.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.intermediate.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.intermediate.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.dense.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.LayerNorm.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.encoder.layer.11.output.LayerNorm.bias
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.pooler.dense.weight
+2019-05-12 21:39:14,363 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_bert.bert_model.pooler.dense.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_tokens.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - Following parameters are Tunable (with gradient):
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_token_characters._embedding._module.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _embedding_proj_layer.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _embedding_proj_layer.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _highway_layer._layers.0.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _highway_layer._layers.0.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _highway_layer._layers.1.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _highway_layer._layers.1.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _encoding_proj_layer.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _encoding_proj_layer.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.0.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.0.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.1.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.1.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.2.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.2.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.3.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_norm_layers.3.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.0.1.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.0.1.bias
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.0.2.weight
+2019-05-12 21:39:14,364 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.0.2.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.1.1.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.1.1.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.1.2.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.1.2.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.2.1.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.2.1.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.2.2.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.2.2.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.3.1.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.3.1.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.3.2.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0._conv_layers.3.2.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_norm_layer.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_norm_layer.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_layer._output_projection.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.attention_layer._output_projection.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward_norm_layer.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward_norm_layer.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _phrase_layer.encoder_block_0.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _matrix_attention._weight_vector
+2019-05-12 21:39:14,365 - INFO - allennlp.training.trainer - _matrix_attention._bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_proj_layer.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_proj_layer.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_norm_layers.0.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_norm_layers.0.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_norm_layers.1.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_norm_layers.1.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.0.1.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.0.1.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.0.2.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.0.2.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.1.1.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.1.1.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.1.2.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0._conv_layers.1.2.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_norm_layer.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_norm_layer.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_layer._output_projection.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.attention_layer._output_projection.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward_norm_layer.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward_norm_layer.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,366 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_0.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_norm_layers.0.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_norm_layers.0.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_norm_layers.1.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_norm_layers.1.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.0.1.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.0.1.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.0.2.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.0.2.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.1.1.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.1.1.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.1.2.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1._conv_layers.1.2.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_norm_layer.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_norm_layer.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_layer._output_projection.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.attention_layer._output_projection.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward_norm_layer.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward_norm_layer.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_1.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,367 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_norm_layers.0.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_norm_layers.0.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_norm_layers.1.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_norm_layers.1.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.0.1.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.0.1.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.0.2.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.0.2.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.1.1.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.1.1.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.1.2.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2._conv_layers.1.2.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_norm_layer.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_norm_layer.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_layer._output_projection.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.attention_layer._output_projection.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward_norm_layer.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward_norm_layer.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_2.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_norm_layers.0.weight
+2019-05-12 21:39:14,368 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_norm_layers.0.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_norm_layers.1.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_norm_layers.1.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.0.1.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.0.1.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.0.2.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.0.2.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.1.1.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.1.1.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.1.2.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3._conv_layers.1.2.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_norm_layer.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_norm_layer.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_layer._output_projection.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.attention_layer._output_projection.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward_norm_layer.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward_norm_layer.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_3.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_norm_layers.0.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_norm_layers.0.bias
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_norm_layers.1.weight
+2019-05-12 21:39:14,369 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_norm_layers.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.0.1.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.0.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.0.2.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.0.2.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.1.1.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.1.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.1.2.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4._conv_layers.1.2.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_norm_layer.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_norm_layer.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_layer._output_projection.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.attention_layer._output_projection.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward_norm_layer.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward_norm_layer.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_4.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_norm_layers.0.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_norm_layers.0.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_norm_layers.1.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_norm_layers.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.0.1.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.0.1.bias
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.0.2.weight
+2019-05-12 21:39:14,370 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.0.2.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.1.1.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.1.1.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.1.2.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5._conv_layers.1.2.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_norm_layer.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_norm_layer.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_layer._combined_projection.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_layer._combined_projection.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_layer._output_projection.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.attention_layer._output_projection.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward_norm_layer.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward_norm_layer.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward._linear_layers.0.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward._linear_layers.0.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward._linear_layers.1.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _modeling_layer.encoder_block_5.feedforward._linear_layers.1.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_weights_predictor.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_weights_predictor.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _question_weights_predictor.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _question_weights_predictor.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _answer_ability_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _answer_ability_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _answer_ability_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _answer_ability_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_start_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_start_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_start_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_start_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_end_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,371 - INFO - allennlp.training.trainer - _passage_span_end_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _passage_span_end_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _passage_span_end_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_start_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_start_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_start_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_start_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_end_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_end_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_end_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _question_span_end_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _number_sign_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _number_sign_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _number_sign_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _number_sign_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _count_number_predictor._linear_layers.0.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _count_number_predictor._linear_layers.0.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _count_number_predictor._linear_layers.1.weight
+2019-05-12 21:39:14,372 - INFO - allennlp.training.trainer - _count_number_predictor._linear_layers.1.bias
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.patience = 10
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.validation_metric = +f1
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.shuffle = True
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.num_epochs = 50
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.cuda_device = 1
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.grad_norm = 5
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.grad_clipping = None
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.learning_rate_scheduler = None
+2019-05-12 21:39:14,372 - INFO - allennlp.common.params - trainer.momentum_scheduler = None
+2019-05-12 21:39:22,207 - INFO - allennlp.common.params - trainer.optimizer.type = adam
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.optimizer.parameter_groups = None
+2019-05-12 21:39:22,208 - INFO - allennlp.training.optimizers - Number of trainable parameters: 1594464
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.optimizer.infer_type_and_cast = True
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - Converting Params object to dict; logging of default values will not occur when dictionary parameters are used subsequently.
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - CURRENTLY DEFINED PARAMETERS: 
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.optimizer.betas = [0.8, 0.999]
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.optimizer.eps = 1e-07
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.optimizer.lr = 0.0005
+2019-05-12 21:39:22,208 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.training.moving_average.MovingAverage'> from params {'decay': 0.9999, 'type': 'exponential'} and extras {'parameters'}
+2019-05-12 21:39:22,208 - INFO - allennlp.common.params - trainer.moving_average.type = exponential
+2019-05-12 21:39:22,208 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.training.moving_average.ExponentialMovingAverage'> from params {'decay': 0.9999} and extras {'parameters'}
+2019-05-12 21:39:22,209 - INFO - allennlp.common.params - trainer.moving_average.decay = 0.9999
+2019-05-12 21:39:22,209 - INFO - allennlp.common.params - trainer.moving_average.numerator = 1.0
+2019-05-12 21:39:22,209 - INFO - allennlp.common.params - trainer.moving_average.denominator = 10.0
+2019-05-12 21:39:22,224 - INFO - allennlp.common.params - trainer.num_serialized_models_to_keep = 1
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.keep_serialized_model_every_num_seconds = None
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.model_save_interval = None
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.summary_interval = 100
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.histogram_interval = None
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.should_log_parameter_statistics = True
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.should_log_learning_rate = False
+2019-05-12 21:39:22,225 - INFO - allennlp.common.params - trainer.log_batch_size_period = None
+2019-05-12 21:39:22,234 - INFO - allennlp.training.trainer - Beginning training.
+2019-05-12 21:39:22,234 - INFO - allennlp.training.trainer - Epoch 0/49
+2019-05-12 21:39:22,234 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 6445.62
+2019-05-12 21:39:22,347 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 10
+2019-05-12 21:39:22,347 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 1181
+2019-05-12 21:39:22,355 - INFO - allennlp.training.trainer - Training
+2019-05-12 22:14:32,951 - INFO - allennlp.training.trainer - Validating
+2019-05-12 22:17:45,893 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-12 22:17:45,894 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  1181.000  |       N/A
+2019-05-12 22:17:45,894 - INFO - allennlp.training.tensorboard_writer - loss            |     4.319  |  1573885.392
+2019-05-12 22:17:45,894 - INFO - allennlp.training.tensorboard_writer - f1              |     0.188  |     0.236
+2019-05-12 22:17:45,894 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  6445.620  |       N/A
+2019-05-12 22:17:45,894 - INFO - allennlp.training.tensorboard_writer - em              |     0.154  |     0.208
+2019-05-12 22:17:45,895 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |    10.000  |       N/A
+2019-05-12 22:17:51,322 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-12 22:17:56,991 - INFO - allennlp.training.trainer - Epoch duration: 00:38:34
+2019-05-12 22:17:56,992 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 7:30:23
+2019-05-12 22:17:56,992 - INFO - allennlp.training.trainer - Epoch 1/49
+2019-05-12 22:17:56,992 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8502.24
+2019-05-12 22:17:57,410 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-12 22:17:57,410 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-12 22:17:57,418 - INFO - allennlp.training.trainer - Training
+2019-05-12 22:50:40,248 - INFO - allennlp.training.trainer - Validating
+2019-05-12 22:53:31,352 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-12 22:53:31,352 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-12 22:53:31,352 - INFO - allennlp.training.tensorboard_writer - loss            |     3.677  |  1573885.143
+2019-05-12 22:53:31,353 - INFO - allennlp.training.tensorboard_writer - f1              |     0.247  |     0.271
+2019-05-12 22:53:31,353 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8502.240  |       N/A
+2019-05-12 22:53:31,353 - INFO - allennlp.training.tensorboard_writer - em              |     0.211  |     0.247
+2019-05-12 22:53:31,353 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-12 22:53:37,160 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-12 22:53:42,614 - INFO - allennlp.training.trainer - Epoch duration: 00:35:45
+2019-05-12 22:53:42,615 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 5:44:09
+2019-05-12 22:53:42,615 - INFO - allennlp.training.trainer - Epoch 2/49
+2019-05-12 22:53:42,615 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8503.148
+2019-05-12 22:53:42,813 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-12 22:53:42,813 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-12 22:53:42,823 - INFO - allennlp.training.trainer - Training
+2019-05-12 23:26:22,998 - INFO - allennlp.training.trainer - Validating
+2019-05-12 23:29:15,371 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-12 23:29:15,372 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-12 23:29:15,372 - INFO - allennlp.training.tensorboard_writer - loss            |     3.461  |  1571815.430
+2019-05-12 23:29:15,372 - INFO - allennlp.training.tensorboard_writer - f1              |     0.281  |     0.306
+2019-05-12 23:29:15,372 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8503.148  |       N/A
+2019-05-12 23:29:15,372 - INFO - allennlp.training.tensorboard_writer - em              |     0.246  |     0.282
+2019-05-12 23:29:15,373 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-12 23:29:20,654 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-12 23:29:25,813 - INFO - allennlp.training.trainer - Epoch duration: 00:35:43
+2019-05-12 23:29:25,814 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 4:44:16
+2019-05-12 23:29:25,814 - INFO - allennlp.training.trainer - Epoch 3/49
+2019-05-12 23:29:25,814 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8503.396
+2019-05-12 23:29:25,996 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-12 23:29:25,997 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-12 23:29:26,005 - INFO - allennlp.training.trainer - Training
+2019-05-13 00:02:01,619 - INFO - allennlp.training.trainer - Validating
+2019-05-13 00:04:52,180 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 00:04:52,180 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 00:04:52,181 - INFO - allennlp.training.tensorboard_writer - loss            |     3.292  |  1570780.538
+2019-05-13 00:04:52,181 - INFO - allennlp.training.tensorboard_writer - f1              |     0.316  |     0.342
+2019-05-13 00:04:52,181 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8503.396  |       N/A
+2019-05-13 00:04:52,181 - INFO - allennlp.training.tensorboard_writer - em              |     0.278  |     0.317
+2019-05-13 00:04:52,181 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 00:04:58,763 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 00:05:04,433 - INFO - allennlp.training.trainer - Epoch duration: 00:35:38
+2019-05-13 00:05:04,433 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 3:55:35
+2019-05-13 00:05:04,434 - INFO - allennlp.training.trainer - Epoch 4/49
+2019-05-13 00:05:04,434 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.056
+2019-05-13 00:05:04,641 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 00:05:04,642 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 00:05:04,650 - INFO - allennlp.training.trainer - Training
+2019-05-13 00:37:36,807 - INFO - allennlp.training.trainer - Validating
+2019-05-13 00:40:27,401 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - loss            |     3.168  |  1573884.771
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - f1              |     0.339  |     0.360
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.056  |       N/A
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - em              |     0.300  |     0.334
+2019-05-13 00:40:27,402 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 00:40:33,243 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 00:40:38,859 - INFO - allennlp.training.trainer - Epoch duration: 00:35:34
+2019-05-13 00:40:38,860 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 3:11:29
+2019-05-13 00:40:38,860 - INFO - allennlp.training.trainer - Epoch 5/49
+2019-05-13 00:40:38,860 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.32
+2019-05-13 00:40:38,994 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 00:40:38,995 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 00:40:39,002 - INFO - allennlp.training.trainer - Training
+2019-05-13 01:13:10,100 - INFO - allennlp.training.trainer - Validating
+2019-05-13 01:16:00,646 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 01:16:00,647 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 01:16:00,647 - INFO - allennlp.training.tensorboard_writer - loss            |     3.071  |  1571815.192
+2019-05-13 01:16:00,647 - INFO - allennlp.training.tensorboard_writer - f1              |     0.358  |     0.379
+2019-05-13 01:16:00,647 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.320  |       N/A
+2019-05-13 01:16:00,647 - INFO - allennlp.training.tensorboard_writer - em              |     0.319  |     0.353
+2019-05-13 01:16:00,648 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 01:16:07,710 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 01:16:14,357 - INFO - allennlp.training.trainer - Epoch duration: 00:35:35
+2019-05-13 01:16:14,357 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 2:30:22
+2019-05-13 01:16:14,357 - INFO - allennlp.training.trainer - Epoch 6/49
+2019-05-13 01:16:14,357 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 01:16:14,484 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 01:16:14,484 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 01:16:14,491 - INFO - allennlp.training.trainer - Training
+2019-05-13 01:48:54,762 - INFO - allennlp.training.trainer - Validating
+2019-05-13 01:51:45,077 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - loss            |     2.984  |  1573884.704
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - f1              |     0.376  |     0.388
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - em              |     0.336  |     0.361
+2019-05-13 01:51:45,078 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 01:51:50,747 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 01:51:56,137 - INFO - allennlp.training.trainer - Epoch duration: 00:35:41
+2019-05-13 01:51:56,137 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 1:51:28
+2019-05-13 01:51:56,138 - INFO - allennlp.training.trainer - Epoch 7/49
+2019-05-13 01:51:56,138 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 01:51:56,219 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 01:51:56,220 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 01:51:56,228 - INFO - allennlp.training.trainer - Training
+2019-05-13 02:24:33,129 - INFO - allennlp.training.trainer - Validating
+2019-05-13 02:27:24,289 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 02:27:24,290 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 02:27:24,290 - INFO - allennlp.training.tensorboard_writer - loss            |     2.917  |  1572849.890
+2019-05-13 02:27:24,290 - INFO - allennlp.training.tensorboard_writer - f1              |     0.386  |     0.403
+2019-05-13 02:27:24,290 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 02:27:24,291 - INFO - allennlp.training.tensorboard_writer - em              |     0.346  |     0.376
+2019-05-13 02:27:24,291 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 02:27:30,678 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 02:27:36,700 - INFO - allennlp.training.trainer - Epoch duration: 00:35:40
+2019-05-13 02:27:36,700 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 1:13:15
+2019-05-13 02:27:36,700 - INFO - allennlp.training.trainer - Epoch 8/49
+2019-05-13 02:27:36,701 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 02:27:36,775 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 02:27:36,775 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 02:27:36,782 - INFO - allennlp.training.trainer - Training
+2019-05-13 03:00:10,536 - INFO - allennlp.training.trainer - Validating
+2019-05-13 03:03:00,758 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 03:03:00,759 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 03:03:00,759 - INFO - allennlp.training.tensorboard_writer - loss            |     2.866  |  1570780.328
+2019-05-13 03:03:00,759 - INFO - allennlp.training.tensorboard_writer - f1              |     0.394  |     0.411
+2019-05-13 03:03:00,759 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 03:03:00,759 - INFO - allennlp.training.tensorboard_writer - em              |     0.353  |     0.385
+2019-05-13 03:03:00,760 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 03:03:06,867 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 03:03:16,270 - INFO - allennlp.training.trainer - Epoch duration: 00:35:39
+2019-05-13 03:03:16,270 - INFO - allennlp.training.trainer - Estimated training time remaining: 1 day, 0:35:32
+2019-05-13 03:03:16,270 - INFO - allennlp.training.trainer - Epoch 9/49
+2019-05-13 03:03:16,271 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 03:03:16,344 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 03:03:16,344 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 03:03:16,352 - INFO - allennlp.training.trainer - Training
+2019-05-13 03:35:48,331 - INFO - allennlp.training.trainer - Validating
+2019-05-13 03:38:38,646 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 03:38:38,647 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 03:38:38,647 - INFO - allennlp.training.tensorboard_writer - loss            |     2.819  |  1571815.092
+2019-05-13 03:38:38,647 - INFO - allennlp.training.tensorboard_writer - f1              |     0.405  |     0.417
+2019-05-13 03:38:38,647 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 03:38:38,647 - INFO - allennlp.training.tensorboard_writer - em              |     0.363  |     0.390
+2019-05-13 03:38:38,648 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 03:38:44,241 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 03:38:49,576 - INFO - allennlp.training.trainer - Epoch duration: 00:35:33
+2019-05-13 03:38:49,577 - INFO - allennlp.training.trainer - Estimated training time remaining: 23:57:49
+2019-05-13 03:38:49,577 - INFO - allennlp.training.trainer - Epoch 10/49
+2019-05-13 03:38:49,577 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 03:38:49,651 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 03:38:49,652 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5973
+2019-05-13 03:38:49,660 - INFO - allennlp.training.trainer - Training
+2019-05-13 04:11:22,953 - INFO - allennlp.training.trainer - Validating
+2019-05-13 04:14:13,420 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5973.000  |       N/A
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - loss            |     2.765  |  1572849.832
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - f1              |     0.414  |     0.426
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - em              |     0.373  |     0.400
+2019-05-13 04:14:13,421 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 04:14:18,909 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 04:14:24,165 - INFO - allennlp.training.trainer - Epoch duration: 00:35:34
+2019-05-13 04:14:24,166 - INFO - allennlp.training.trainer - Estimated training time remaining: 23:20:34
+2019-05-13 04:14:24,166 - INFO - allennlp.training.trainer - Epoch 11/49
+2019-05-13 04:14:24,166 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.46
+2019-05-13 04:14:24,240 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 04:14:24,240 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 04:14:24,248 - INFO - allennlp.training.trainer - Training
+2019-05-13 04:46:54,501 - INFO - allennlp.training.trainer - Validating
+2019-05-13 04:49:44,976 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 04:49:44,976 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5975.000  |       N/A
+2019-05-13 04:49:44,977 - INFO - allennlp.training.tensorboard_writer - loss            |     2.724  |  1571815.068
+2019-05-13 04:49:44,977 - INFO - allennlp.training.tensorboard_writer - f1              |     0.420  |     0.431
+2019-05-13 04:49:44,977 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.460  |       N/A
+2019-05-13 04:49:44,977 - INFO - allennlp.training.tensorboard_writer - em              |     0.378  |     0.405
+2019-05-13 04:49:44,977 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 04:49:49,921 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 04:49:58,977 - INFO - allennlp.training.trainer - Epoch duration: 00:35:34
+2019-05-13 04:49:58,978 - INFO - allennlp.training.trainer - Estimated training time remaining: 22:43:36
+2019-05-13 04:49:58,978 - INFO - allennlp.training.trainer - Epoch 12/49
+2019-05-13 04:49:58,978 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.492
+2019-05-13 04:49:59,048 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 04:49:59,048 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 04:49:59,056 - INFO - allennlp.training.trainer - Training
+2019-05-13 05:22:30,442 - INFO - allennlp.training.trainer - Validating
+2019-05-13 05:25:20,845 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 05:25:20,845 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5975.000  |       N/A
+2019-05-13 05:25:20,845 - INFO - allennlp.training.tensorboard_writer - loss            |     2.685  |  1572849.837
+2019-05-13 05:25:20,846 - INFO - allennlp.training.tensorboard_writer - f1              |     0.423  |     0.433
+2019-05-13 05:25:20,846 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.492  |       N/A
+2019-05-13 05:25:20,846 - INFO - allennlp.training.tensorboard_writer - em              |     0.381  |     0.407
+2019-05-13 05:25:20,846 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 05:25:26,125 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 05:25:31,023 - INFO - allennlp.training.trainer - Epoch duration: 00:35:32
+2019-05-13 05:25:31,023 - INFO - allennlp.training.trainer - Estimated training time remaining: 22:06:43
+2019-05-13 05:25:31,024 - INFO - allennlp.training.trainer - Epoch 13/49
+2019-05-13 05:25:31,024 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.492
+2019-05-13 05:25:31,098 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 05:25:31,098 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 05:25:31,105 - INFO - allennlp.training.trainer - Training
+2019-05-13 05:58:01,612 - INFO - allennlp.training.trainer - Validating
+2019-05-13 06:00:51,699 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5975.000  |       N/A
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - loss            |     2.650  |  1571815.053
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - f1              |     0.433  |     0.437
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.492  |       N/A
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - em              |     0.391  |     0.411
+2019-05-13 06:00:51,700 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 06:00:57,009 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 06:01:01,957 - INFO - allennlp.training.trainer - Epoch duration: 00:35:30
+2019-05-13 06:01:01,958 - INFO - allennlp.training.trainer - Estimated training time remaining: 21:29:59
+2019-05-13 06:01:01,958 - INFO - allennlp.training.trainer - Epoch 14/49
+2019-05-13 06:01:01,958 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.564
+2019-05-13 06:01:02,028 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 06:01:02,028 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 06:01:02,036 - INFO - allennlp.training.trainer - Training
+2019-05-13 06:33:33,193 - INFO - allennlp.training.trainer - Validating
+2019-05-13 06:36:23,319 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 06:36:23,319 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5975.000  |       N/A
+2019-05-13 06:36:23,319 - INFO - allennlp.training.tensorboard_writer - loss            |     2.618  |  1570780.272
+2019-05-13 06:36:23,320 - INFO - allennlp.training.tensorboard_writer - f1              |     0.436  |     0.443
+2019-05-13 06:36:23,320 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.564  |       N/A
+2019-05-13 06:36:23,320 - INFO - allennlp.training.tensorboard_writer - em              |     0.393  |     0.417
+2019-05-13 06:36:23,320 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 06:36:30,697 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 06:36:36,875 - INFO - allennlp.training.trainer - Epoch duration: 00:35:34
+2019-05-13 06:36:36,875 - INFO - allennlp.training.trainer - Estimated training time remaining: 20:53:34
+2019-05-13 06:36:36,875 - INFO - allennlp.training.trainer - Epoch 15/49
+2019-05-13 06:36:36,875 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.588
+2019-05-13 06:36:36,951 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 06:36:36,952 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 06:36:36,959 - INFO - allennlp.training.trainer - Training
+2019-05-13 07:09:11,844 - INFO - allennlp.training.trainer - Validating
+2019-05-13 07:12:02,342 - INFO - allennlp.training.tensorboard_writer -                     Training |  Validation
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - gpu_1_memory_MB |  5975.000  |       N/A
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - loss            |     2.584  |  1576988.861
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - f1              |     0.444  |     0.449
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - cpu_memory_MB   |  8505.588  |       N/A
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - em              |     0.401  |     0.422
+2019-05-13 07:12:02,343 - INFO - allennlp.training.tensorboard_writer - gpu_0_memory_MB |   155.000  |       N/A
+2019-05-13 07:12:07,191 - INFO - allennlp.training.checkpointer - Best validation performance so far. Copying weights to 'out/rc_bert_full_v2/best.th'.
+2019-05-13 07:12:12,030 - INFO - allennlp.training.trainer - Epoch duration: 00:35:35
+2019-05-13 07:12:12,031 - INFO - allennlp.training.trainer - Estimated training time remaining: 20:17:15
+2019-05-13 07:12:12,031 - INFO - allennlp.training.trainer - Epoch 16/49
+2019-05-13 07:12:12,031 - INFO - allennlp.training.trainer - Peak CPU memory usage MB: 8505.612
+2019-05-13 07:12:12,104 - INFO - allennlp.training.trainer - GPU 0 memory usage MB: 155
+2019-05-13 07:12:12,104 - INFO - allennlp.training.trainer - GPU 1 memory usage MB: 5975
+2019-05-13 07:12:12,111 - INFO - allennlp.training.trainer - Training
