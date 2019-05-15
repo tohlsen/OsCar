@@ -22,20 +22,13 @@ class DirArgumentParser(argparse.ArgumentParser):
                 kwargs['type'] = type
         self.add_argument(*args, **kwargs)
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
 def readMetrics(dir_path):
     metric_jsons = []
-
-    for filename in glob.glob(os.path.join(dir_path, 'metrics_epoch_*.json')):
+    final_metric_file = open(os.path.join(dir_path, 'metrics.json'))
+    max_epoch_num = json.load(final_metric_file)['epoch']
+    # for filename in glob.glob(os.path.join(dir_path, 'metrics_epoch_*.json')):
+    for epoch in range(max_epoch_num + 1):
+        filename = os.path.join(dir_path, 'metrics_epoch_' + str(epoch) + '.json')
         f = open(filename, 'r')
         metric_jsons.append(json.load(f))
     
@@ -55,7 +48,6 @@ def writeTSV(metrics, out_name):
             dev_em = str(cur_metric['validation_em']*100)
             dev_f1 = str(cur_metric['validation_f1']*100)
             writer.writerow([epoch_num, train_em, train_f1, dev_em, dev_f1])
-    print(bcolors.OKGREEN + 'Wrote to: ' + output_dir + out_name + '.tsv' + bcolors.ENDC)
 
 
 def main():
