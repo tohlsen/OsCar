@@ -44,8 +44,8 @@
         "only_include_pretrained_words": true
     },
 
-    "train_data_path": "drop_dataset/drop_dataset_mini.json",
-    "validation_data_path": "drop_dataset/drop_dataset_mini.json",
+    "train_data_path": "drop_dataset/drop_dataset_train.json",
+    "validation_data_path": "drop_dataset/drop_dataset_dev.json",
 
     "model": {
         "type": "naqanetic",
