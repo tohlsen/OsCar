@@ -489,10 +489,17 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
                     # Shape: (batch_size, # of count answers)
                     repeated_best_count_number = best_count_number.unsqueeze(-1).repeat(1, clamped_gold_counts.shape[-1])
-                    count_mse_loss = self._mse(repeated_best_count_number, clamped_gold_counts.float())
+                    # Shape: (batch_size,)
+                    count_mse_loss = torch.mean(self._mse(repeated_best_count_number, clamped_gold_counts.float()), dim = -1)
+
+                    logger.info("clamped_gold_counts")
+                    logger.info(clamped_gold_counts)
+                    logger.info("count_mse_loss")
+                    logger.info(count_mse_loss)
+
 
                     # negative because it negates later
-                    log_marginal_likelihood_list.append(-count_mse_loss)
+                    log_marginal_likelihood_list.append(-torch.log(count_mse_loss))
 
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
