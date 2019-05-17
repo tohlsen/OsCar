@@ -491,7 +491,7 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
                     # Shape: (batch_size, )
                     gold_count = torch.argmax(answer_as_counts, dim = -1)
-                    count_mse_loss = self._mse(best_count_number, gold_count)
+                    count_mse_loss = self._mse(best_count_number, gold_count.float())
                     # negative because it negates later
                     log_marginal_likelihood_list.append(-count_mse_loss)
 
