@@ -253,13 +253,6 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
             # Shape: (batch_size, # of words,2)
             count_passage_mask = passage_mask.unsqueeze(-1).repeat(1, 1, 2)
-
-            logger.info("count_number_logits shape")
-            logger.info(count_number_logits.shape)
-            logger.info("count_passage_mask shape")
-            logger.info(count_passage_mask.shape)
-
-
             count_number_probs = masked_softmax(count_number_logits, count_passage_mask, dim = 1, memory_efficient = True)
             # count_number_log_probs = torch.log(count_number_probs)
 
@@ -506,6 +499,7 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
             else:
                 marginal_log_likelihood = log_marginal_likelihood_list[0]
 
+            logger.info(log_marginal_likelihood_list)
             output_dict["loss"] = - marginal_log_likelihood.mean()
 
         # Compute the metrics and add the tokenized input to the output.
