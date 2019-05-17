@@ -254,6 +254,11 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
             # Shape: (batch_size, # of words,2)
             count_passage_mask = passage_mask.unsqueeze(-1).repeat(1, 1, 2)
             count_number_probs = masked_softmax(count_number_logits, count_passage_mask, dim = 1, memory_efficient = True)
+
+            # filtering out low probabilities for 1
+            # count_number_probs = torch.max()
+
+
             # count_number_log_probs = torch.log(count_number_probs)
 
             # counting result
@@ -490,6 +495,9 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     logger.info(best_count_number)
                     logger.info("Gold count")
                     logger.info(gold_count)
+                    logger.info("answer_as_counts")
+                    logger.info(answer_as_counts)
+
 
 
                     # negative because it negates later
