@@ -250,7 +250,7 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
             # Shape: (batch_size, # of words, 2)
             count_number_logits = self._count_number_predictor(encoded_words)
-            count_number_probs = masked_softmax(count_number_logits, passage_masks, dim = 1, memory_efficient = True)
+            count_number_probs = masked_softmax(count_number_logits, passage_mask, dim = 1, memory_efficient = True)
             # count_number_log_probs = torch.log(count_number_probs)
 
             # counting result
