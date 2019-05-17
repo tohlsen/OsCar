@@ -123,10 +123,10 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
         # simply classification of answer being a number between 0-9
         if "counting" in self.answering_abilities:
             self._counting_index = self.answering_abilities.index("counting")
-            self._count_number_predictor = FeedForward(modeling_out_dim,
+            self._count_number_predictor = FeedForward(modeling_out_dim + text_embed_dim,
                                                        activations=[Activation.by_name('relu')(),
                                                                     Activation.by_name('linear')()],
-                                                       hidden_dims=[modeling_out_dim, 10],
+                                                       hidden_dims=[modeling_out_dim, 2],
                                                        num_layers=2)
 
         self._drop_metrics = DropEmAndF1()
@@ -225,11 +225,6 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
         question_weights = masked_softmax(question_weights, question_mask)
         question_vector = util.weighted_sum(encoded_question, question_weights)
 
-        print("Passage vector")
-        print(passage_vector.shape)
-        print("Embedding vector")
-        print(embedded_passage_wo_dropout.shape)
-
         ########################################################################################
 
         # if multiple abilities (should always be the case), predict the answer type based on
@@ -246,9 +241,22 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
         if "counting" in self.answering_abilities:
 
             # # word embeddings: embedded_passage_wo_dropout, passage_mask
-            #
-            # encoded_words = torch.cat(
-            #     [encoded_numbers, passage_vector.unsqueeze(1).repeat(1, encoded_numbers.size(1), 1)], -1)
+            # Shape: (batch_size, # of words, embedding_dim)
+            embedded_words = embedded_passage_wo_dropout
+            # Shape: (batch_size, # of words, embedding_dim + passage_vector_dim)
+            encoded_words = torch.cat(
+                [embedded_words, passage_vector.unsqueeze(1).repeat(1, embedded_words.size(1), 1)], -1)
+
+            # Shape: (batch_size, # of words, 2)
+            count_number_logits = self._count_number_predictor(encoded_words)
+            count_number_probs = masked_softmax(count_number_logits, passage_masks, dim = 1, memory_efficient = True)
+            count_number_log_probs = torch.log(count_number_probs)
+
+            # counting result
+            # Shape: (batch_size,)
+            best_count_number = torch.sum(count_number_probs[:, :, 1].squeeze(-1), dim = -1)
+
+
 
             # Shape: (batch_size, 10)
             count_number_logits = self._count_number_predictor(passage_vector)
