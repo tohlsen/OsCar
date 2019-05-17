@@ -240,7 +240,6 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
         # COUNTING: pass the passage encoding through a FF layer that outputs class probabilites from 0-9,
         # gets the best number counts for
         if "counting" in self.answering_abilities:
-
             # # word embeddings: embedded_passage_wo_dropout, passage_mask
             # Shape: (batch_size, # of words, embedding_dim)
             embedded_words = embedded_passage_wo_dropout
@@ -258,24 +257,10 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
             # filtering out low probabilities for 1
             # count_number_probs = torch.max()
 
-
-            # count_number_log_probs = torch.log(count_number_probs)
-
             # counting result
             # Shape: (batch_size,)
             best_count_number = torch.sum(count_number_probs[:, :, 1].squeeze(-1), dim = -1)
 
-
-            # # Shape: (batch_size, 10)
-            # count_number_logits = self._count_number_predictor(passage_vector)
-            # count_number_log_probs = torch.nn.functional.log_softmax(count_number_logits, -1)
-            # # Info about the best count number prediction
-            # # Shape: (batch_size,)
-            # best_count_number = torch.argmax(count_number_log_probs, -1)
-            # best_count_log_prob = \
-            #     torch.gather(count_number_log_probs, 1, best_count_number.unsqueeze(-1)).squeeze(-1)
-            # if len(self.answering_abilities) > 1:
-            #     best_count_log_prob += answer_ability_log_probs[:, self._counting_index]
 
         if "passage_span_extraction" in self.answering_abilities:
             # Shape: (batch_size, passage_length, modeling_dim * 2))
@@ -492,14 +477,8 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # Shape: (batch_size,)
                     count_mse_loss = torch.mean(self._mse(repeated_best_count_number, clamped_gold_counts.float()), dim = -1)
 
-                    logger.info("clamped_gold_counts")
-                    logger.info(clamped_gold_counts)
-                    logger.info("count_mse_loss")
-                    logger.info(count_mse_loss)
-
-
                     # negative because it negates later
-                    log_marginal_likelihood_list.append(-torch.log(count_mse_loss))
+                    log_marginal_likelihood_list.append(-torch.log(count_mse_loss + 1))
 
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
