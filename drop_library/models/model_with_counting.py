@@ -131,6 +131,7 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
         self._drop_metrics = DropEmAndF1()
         self._dropout = torch.nn.Dropout(p=dropout_prob)
+        self._mse = torch.nn.MSELoss(reduction = 'none')
 
         initializer(self)
 
@@ -250,24 +251,23 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
             # Shape: (batch_size, # of words, 2)
             count_number_logits = self._count_number_predictor(encoded_words)
             count_number_probs = masked_softmax(count_number_logits, passage_masks, dim = 1, memory_efficient = True)
-            count_number_log_probs = torch.log(count_number_probs)
+            # count_number_log_probs = torch.log(count_number_probs)
 
             # counting result
             # Shape: (batch_size,)
             best_count_number = torch.sum(count_number_probs[:, :, 1].squeeze(-1), dim = -1)
 
 
-
-            # Shape: (batch_size, 10)
-            count_number_logits = self._count_number_predictor(passage_vector)
-            count_number_log_probs = torch.nn.functional.log_softmax(count_number_logits, -1)
-            # Info about the best count number prediction
-            # Shape: (batch_size,)
-            best_count_number = torch.argmax(count_number_log_probs, -1)
-            best_count_log_prob = \
-                torch.gather(count_number_log_probs, 1, best_count_number.unsqueeze(-1)).squeeze(-1)
-            if len(self.answering_abilities) > 1:
-                best_count_log_prob += answer_ability_log_probs[:, self._counting_index]
+            # # Shape: (batch_size, 10)
+            # count_number_logits = self._count_number_predictor(passage_vector)
+            # count_number_log_probs = torch.nn.functional.log_softmax(count_number_logits, -1)
+            # # Info about the best count number prediction
+            # # Shape: (batch_size,)
+            # best_count_number = torch.argmax(count_number_log_probs, -1)
+            # best_count_log_prob = \
+            #     torch.gather(count_number_log_probs, 1, best_count_number.unsqueeze(-1)).squeeze(-1)
+            # if len(self.answering_abilities) > 1:
+            #     best_count_log_prob += answer_ability_log_probs[:, self._counting_index]
 
         if "passage_span_extraction" in self.answering_abilities:
             # Shape: (batch_size, passage_length, modeling_dim * 2))
@@ -468,16 +468,22 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # Count answers are padded with label -1,
                     # so we clamp those paddings to 0 and then mask after `torch.gather()`.
                     # Shape: (batch_size, # of count answers)
-                    gold_count_mask = (answer_as_counts != -1).long()
-                    # Shape: (batch_size, # of count answers)
-                    clamped_gold_counts = util.replace_masked_values(answer_as_counts, gold_count_mask, 0)
-                    log_likelihood_for_counts = torch.gather(count_number_log_probs, 1, clamped_gold_counts)
-                    # For those padded spans, we set their log probabilities to be very small negative value
-                    log_likelihood_for_counts = \
-                        util.replace_masked_values(log_likelihood_for_counts, gold_count_mask, -1e7)
+                    # gold_count_mask = (answer_as_counts != -1).long()
+                    # # Shape: (batch_size, # of count answers)
+                    # clamped_gold_counts = util.replace_masked_values(answer_as_counts, gold_count_mask, 0)
+
+                    # log_likelihood_for_counts = torch.gather(count_number_log_probs, 1, clamped_gold_counts)
+                    # # For those padded spans, we set their log probabilities to be very small negative value
+                    # log_likelihood_for_counts = \
+                    #     util.replace_masked_values(log_likelihood_for_counts, gold_count_mask, -1e7)
+                    # # Shape: (batch_size, )
+                    # log_marginal_likelihood_for_count = util.logsumexp(log_likelihood_for_counts)
+
                     # Shape: (batch_size, )
-                    log_marginal_likelihood_for_count = util.logsumexp(log_likelihood_for_counts)
-                    log_marginal_likelihood_list.append(log_marginal_likelihood_for_count)
+                    gold_count = torch.argmax(answer_as_counts, dim = -1)
+                    count_mse_loss = self._mse(best_count_number, gold_count)
+                    # negative because it negates later
+                    log_marginal_likelihood_list.append(-count_mse_loss)
 
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
