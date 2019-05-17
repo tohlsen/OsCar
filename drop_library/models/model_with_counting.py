@@ -476,9 +476,9 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # Count answers are padded with label -1,
                     # so we clamp those paddings to 0 and then mask after `torch.gather()`.
                     # Shape: (batch_size, # of count answers)
-                    # gold_count_mask = (answer_as_counts != -1).long()
+                    gold_count_mask = (answer_as_counts != -1).long()
                     # # Shape: (batch_size, # of count answers)
-                    # clamped_gold_counts = util.replace_masked_values(answer_as_counts, gold_count_mask, 0)
+                    clamped_gold_counts = util.replace_masked_values(answer_as_counts, gold_count_mask, 0)
 
                     # log_likelihood_for_counts = torch.gather(count_number_log_probs, 1, clamped_gold_counts)
                     # # For those padded spans, we set their log probabilities to be very small negative value
@@ -487,18 +487,9 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # # Shape: (batch_size, )
                     # log_marginal_likelihood_for_count = util.logsumexp(log_likelihood_for_counts)
 
-                    # Shape: (batch_size, )
-                    gold_count = torch.argmax(answer_as_counts, dim = -1)
-                    count_mse_loss = self._mse(best_count_number, gold_count.float())
-
-                    logger.info("Best count")
-                    logger.info(best_count_number)
-                    logger.info("Gold count")
-                    logger.info(gold_count)
-                    logger.info("answer_as_counts")
-                    logger.info(answer_as_counts)
-
-
+                    # Shape: (batch_size, # of count answers)
+                    repeated_best_count_number = best_count_number.unsqueeze(-1).repeat(1, clamped_gold_counts.shape[-1])
+                    count_mse_loss = self._mse(repeated_best_count_number, clamped_gold_counts.float())
 
                     # negative because it negates later
                     log_marginal_likelihood_list.append(-count_mse_loss)
