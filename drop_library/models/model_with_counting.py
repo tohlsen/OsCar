@@ -250,9 +250,9 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
             # Shape: (batch_size, # of words, 2)
             count_number_logits = self._count_number_predictor(encoded_words)
 
-            # Shape: (batch_size, # of words,2)
+            # Shape: (batch_size, # of words, 2)
             count_passage_mask = passage_mask.unsqueeze(-1).repeat(1, 1, 2)
-            count_number_probs = masked_softmax(count_number_logits, count_passage_mask, dim = 1, memory_efficient = True)
+            count_number_probs = masked_softmax(count_number_logits, count_passage_mask, dim = 2, memory_efficient = True)
 
             # filtering out low probabilities for 1
             # count_number_probs = torch.max()
