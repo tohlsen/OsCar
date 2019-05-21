@@ -480,12 +480,15 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # negative because it negates later
                     log_marginal_likelihood_list.append(-count_mse_loss)
 
-                    logger.info("MSE")
-                    logger.info(count_mse_loss)
-                    logger.info("Predicted")
-                    logger.info(best_count_number)
-                    logger.info("Expected")
-                    logger.info(clamped_gold_counts)
+                    # logger.info("MSE")
+                    # logger.info(count_mse_loss)
+                    # logger.info("Predicted")
+                    # logger.info(best_count_number)
+                    # logger.info("Expected")
+                    # logger.info(clamped_gold_counts)
+
+                    logger.info("Count number probs")
+                    logger.info(count_number_probs)
 
 
                 else:
