@@ -483,13 +483,12 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # for accuracy metrics
                     best_count_number = torch.round(best_count_number).long()
 
-                    logger.info("MSE")
-                    logger.info(count_mse_loss)
-                    logger.info("Predicted")
-                    logger.info(best_count_number)
-                    logger.info("Expected")
-                    logger.info(clamped_gold_counts)
-
+                    # logger.info("MSE")
+                    # logger.info(count_mse_loss)
+                    # logger.info("Predicted")
+                    # logger.info(best_count_number)
+                    # logger.info("Expected")
+                    # logger.info(clamped_gold_counts)
 
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
