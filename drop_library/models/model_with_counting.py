@@ -486,9 +486,9 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     # logger.info(best_count_number)
                     # logger.info("Expected")
                     # logger.info(clamped_gold_counts)
-
-                    logger.info("Count number probs")
-                    logger.info(count_number_probs)
+                    #
+                    # logger.info("Count number probs")
+                    # logger.info(count_number_probs)
 
 
                 else:
