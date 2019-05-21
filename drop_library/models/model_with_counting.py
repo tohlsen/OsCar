@@ -478,7 +478,15 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
                     count_mse_loss = torch.mean(self._mse(repeated_best_count_number, clamped_gold_counts.float()), dim = -1)
 
                     # negative because it negates later
-                    log_marginal_likelihood_list.append(torch.log(count_mse_loss + 1))
+                    log_marginal_likelihood_list.append(-count_mse_loss)
+
+                    logger.info("MSE")
+                    logger.info(count_mse_loss)
+                    logger.info("Predicted")
+                    logger.info(best_count_number)
+                    logger.info("Expected")
+                    logger.info(clamped_gold_counts)
+
 
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
