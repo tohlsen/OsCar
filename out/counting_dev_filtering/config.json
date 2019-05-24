@@ -115,8 +115,8 @@
         },
         "threshold": 0.8
     },
-    "train_data_path": "drop_dataset/drop_dataset_mini.json",
-    "validation_data_path": "drop_dataset/drop_dataset_mini.json",
+    "train_data_path": "drop_dataset/drop_dataset_train.json",
+    "validation_data_path": "drop_dataset/drop_dataset_dev.json",
     "trainer": {
         "cuda_device": 0,
         "grad_norm": 5,

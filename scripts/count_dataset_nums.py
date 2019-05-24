@@ -4,8 +4,8 @@ import json
 import string
 from word2number.w2n import word_to_num # need to 'pip install word2number' to use
 
-# returning count of numbers (old DatasetReader)
-def old_reader_get_count(word):
+# returning a number if found (old DatasetReader)
+def old_reader_get_numbers(word):
     WORD_NUMBER_MAP = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
                     "five": 5, "six": 6, "seven": 7, "eight": 8,
                     "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
@@ -15,52 +15,25 @@ def old_reader_get_count(word):
     no_comma_word = word.replace(",", "")
     number = None
     if no_comma_word in WORD_NUMBER_MAP:
-        return 1
+        number = WORD_NUMBER_MAP[no_comma_word]
     else:
         try:
             number = int(no_comma_word)
         except ValueError:
-            return 0
+            return None
     if number is not None:
-        return 1
-    else:
-        return 0
-
-# returning count of numbers (new DatasetReader v1)
-def new_reader_v1_get_count(word):
-    # strip all punctuations from the sides of the word, except for the negative sign
-    punctruations = string.punctuation.replace('-', '')
-    word = word.strip(punctruations)
-    # some words may contain the comma as deliminator
-    word = word.replace(",", "")
-    number = None
-    # word2num will convert hundred, thousand ... to number, but we skip it.
-    if word in ["hundred", "thousand", "million", "billion", "trillion"]:
         number = None
-    try:
-        number = word_to_num(word)
-    except ValueError:
-        try:
-            number = int(word)
-        except ValueError:
-            try:
-                number = float(word)
-            except ValueError:
-                number = None
-
-    if number is not None:
-        return 1
     else:
-        return 0
+        return number
 
-# returning count of numbers (new DatasetReader v2)
-def new_reader_v2_get_count(word):
+# returning numbers if found (new DatasetReader v2)
+def new_reader_v2_get_numbers(word):
     # strip all punctuations from the sides of the word, except for the negative sign
     punctuations = string.punctuation.replace('-', '')
     word = word.strip(punctuations)
     # some words may contain the comma as deliminator
     word = word.replace(",", "")
-    numbers = []
+    numbers = {}
     # word2num will convert hundred, thousand ... and point to number, but we skip it.
     if word in ["hundred", "thousand", "million", "billion", "trillion", "point"]:
         return numbers, len(numbers)
@@ -85,9 +58,8 @@ def main():
     train_file_path = "/projects/instr/19sp/cse481n/OsCar/OsCar/drop_dataset/drop_dataset_train.json"
     dev_file_path = "/projects/instr/19sp/cse481n/OsCar/OsCar/drop_dataset/drop_dataset_dev.json"
 
-    old_reader_count = 0
-    new_reader_v1_count = 0
-    new_reader_v2_count = 0
+    old_reader_wordset = {}
+    new_reader_v2_wordset = {}
 
     with open(train_file_path) as file_:
         train_dataset = json.load(file_)
@@ -99,10 +71,9 @@ def main():
 
             # get all number counts from each passage
             for passage_word in passage_words:
-                new_reader_v1_count += new_reader_v1_get_count(passage_word)
-                _, temp_count = new_reader_v2_get_count(passage_word)
-                new_reader_v2_count += temp_count
-                old_reader_count += old_reader_get_count(passage_word)
+                temp_v2_wordset, _ = new_reader_v2_get_numbers(passage_word)
+                new_reader_v2_wordset += temp_v2_wordset
+                old_reader_wordset += old_reader_get_numbers(passage_word)
 
             # for each passage, iterate through all the questions
             for question_answer in passage_info["qa_pairs"]:
@@ -112,15 +83,13 @@ def main():
 
                 # get all number counts from each question
                 for question_word in question_text:
-                    new_reader_v1_count += new_reader_v1_get_count(question_word)
-                    _, temp_count = new_reader_v2_get_count(question_word)
-                    new_reader_v2_count += temp_count
-                    old_reader_count += old_reader_get_count(question_word)
+                    temp_v2_wordset, _ = new_reader_v2_get_numbers(question_word)
+                    new_reader_v2_wordset += temp_v2_wordset
+                    old_reader_wordset += old_reader_get_numbers(question_word)
 
     # print out results
-    print("Old DatasetReader number count: ", old_reader_count)
-    print("New DatasetReader v1 number count: ", new_reader_v1_count)
-    print("New DatasetReader v2 number count: ", new_reader_v2_count)
+    print("Old DatasetReader numbers: ", old_reader_wordset)
+    print("New DatasetReader v2 numbers: ", new_reader_v2_wordset)
 
 if __name__ == '__main__':
     main()
