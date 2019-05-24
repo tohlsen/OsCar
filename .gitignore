@@ -3,3 +3,4 @@ nohup.out
 drop_library/__pycache__/
 metrics_tsv/
 .idea
+*.out
