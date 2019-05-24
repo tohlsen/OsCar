@@ -1,1 +1,2 @@
 from drop_library.models.model_with_counting import NumericallyAugmentedQaNetImprovedCounting
+from drop_library.models.model_with_counting import NumericallyAugmentedQaNetImprovedCountingAndFiltering
