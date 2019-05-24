@@ -6,5 +6,6 @@ drop_library/__pycache__/
 *.pyc
 out/test
 out/backups
+<<<<<<< HEAD
 out/*/vocabulary/
 out/*/log/
