@@ -4,3 +4,7 @@ drop_library/__pycache__/
 *.th
 *.tar.gz
 *.pyc
+out/test
+out/backups
+out/*/vocabulary/
+out/*/log/
