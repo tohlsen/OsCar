@@ -123,14 +123,15 @@ class NumericallyAugmentedQaNetImprovedCountingBiLSTM(Model):
        # simply classification of answer being a number between 0-9
        if "counting" in self.answering_abilities:
            self._counting_index = self.answering_abilities.index("counting")
-        
-           self._count_number_encoder = torch.nn.LSTM(input_size = modeling_out_dim + text_embed_dim, 
-                                                      hidden_size = modeling_out_dim, 
-                                                      num_layers = 2, 
-                                                      batch_first = True, 
+
+           self._count_number_encoder = torch.nn.LSTM(input_size = modeling_out_dim + text_embed_dim,
+                                                      hidden_size = modeling_out_dim,
+                                                      num_layers = 2,
+                                                      batch_first = True,
                                                       bidirectional = True)
-           
-           self._count_number_predictor = FeedForward(modeling_out_dim,
+
+           # input size * 2 for bidirectional output
+           self._count_number_predictor = FeedForward(modeling_out_dim * 2,
                                                       activations=[Activation.by_name('relu')(),
                                                                    Activation.by_name('linear')()],
                                                       hidden_dims=[modeling_out_dim, 2],
@@ -282,7 +283,7 @@ class NumericallyAugmentedQaNetImprovedCountingBiLSTM(Model):
            #                                     num_layers=2)
 
            # Shape: (batch_size, # of words, 2)
-           count_number_logits = self._count_number_encoder(encoded_words)
+           count_number_logits, _ = self._count_number_encoder(encoded_words)
            count_number_logits = self._count_number_predictor(count_number_logits)
 
            ### END OF CHANGES ###

@@ -1,6 +1,6 @@
 {
-   "train_data_path": "drop_dataset/drop_dataset_mini.json",
-    "validation_data_path": "drop_dataset/drop_dataset_mini.json",
+   "train_data_path": "drop_dataset/drop_dataset_train.json",
+    "validation_data_path": "drop_dataset/drop_dataset_dev_no_span.json",
     "dataset_reader": {
         "type": "drop",
         "token_indexers": {
