@@ -1,0 +1,9 @@
+{
+  "best_epoch": 56,
+  "best_validation_em": 0.5081795302013423,
+  "best_validation_f1": 0.5375461409395974,
+  "best_validation_loss": 1586301.6310366592,
+  "peak_cpu_memory_MB": 6862.884,
+  "peak_gpu_0_memory_MB": 1197,
+  "peak_gpu_1_memory_MB": 10
+}

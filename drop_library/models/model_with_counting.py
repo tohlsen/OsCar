@@ -257,15 +257,15 @@ class NumericallyAugmentedQaNetImprovedCounting(Model):
 
            # logger.info("shape of question vector:")
            # logger.info(question_vector.shape)
-           question_vector_dim = question_vector.shape[1]
-           text_embed_dim = self._text_field_embedder.get_output_dim()
-           logger.info("question vector dim:")
-           logger.info(question_vector_dim)
-           logger.info("text embedding dim:")
-           logger.info(text_embed_dim)
-           modeling_out_dim = self._modeling_layer.get_output_dim()
-           logger.info("modeling out dim:")
-           logger.info(modeling_out_dim)
+           # question_vector_dim = question_vector.shape[1]
+           # text_embed_dim = self._text_field_embedder.get_output_dim()
+           # logger.info("question vector dim:")
+           # logger.info(question_vector_dim)
+           # logger.info("text embedding dim:")
+           # logger.info(text_embed_dim)
+           # modeling_out_dim = self._modeling_layer.get_output_dim()
+           # logger.info("modeling out dim:")
+           # logger.info(modeling_out_dim)
 
            # self._count_number_predictor = FeedForward(modeling_out_dim + text_embed_dim,
            #                                     activations=[Activation.by_name('relu')(),

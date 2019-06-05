@@ -143,9 +143,6 @@
             ]
         ],
         "answering_abilities": [
-            "passage_span_extraction",
-            "question_span_extraction",
-            "addition_subtraction",
             "counting"
         ]
     },

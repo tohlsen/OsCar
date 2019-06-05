@@ -93,7 +93,7 @@ def new_reader_v2_get_count(word):
     word = word.replace(",", "")
     numbers = []
     # word2num will convert hundred, thousand ... and point to number, but we skip it.
-    if word in ["hundred", "thousand", "million", "billion", "trillion", "point"]:
+    if word in ["hundred", "thousand", "million", "billion", "trillion"]:
         return numbers, len(numbers)
     try:
         numbers += [word_to_num(word)]
@@ -120,7 +120,7 @@ def parseArgs():
     parser.add_argument('passage_bucket_size', help='Size of passage token buckets for histogram, default = 10', nargs='?', default=10)
     parser.add_argument('question_bucket_size', help='Size of question token buckets for histogram, default = 5', nargs='?', default=5)
     args = parser.parse_args()
-    return args.dataset, args.passage_bucket_size, args.question_bucket_size, int(args.passage_limit), int(args.question_limit)
+    return args.dataset, int(args.passage_bucket_size), int(args.question_bucket_size), int(args.passage_limit), int(args.question_limit)
 
 def percentIncrease(old, new):
     return (new - old) / old * 100
@@ -222,9 +222,12 @@ def analyzeDataset(filePath, passage_bucket_size, question_bucket_size, passage_
             passage_text = passage_info["passage"]
             passage_words = passage_text.split(" ")
 
-            passage_tokens = tokenizer.tokenize(passage_text)
-            passage_tokens = split_tokens_by_hyphen(passage_tokens)
+            passage_tokens_og = tokenizer.tokenize(passage_text)
+            passage_tokens = split_tokens_by_hyphen(passage_tokens_og)
             num_tokens_in_passage = len(passage_tokens)
+            if (num_tokens_in_passage < 50):
+                print(passage_id);
+                print(passage_text);
             num_passage_tokens += num_tokens_in_passage
             passage_bucket = num_tokens_in_passage // passage_bucket_size * passage_bucket_size
             if passage_bucket not in passage_buckets:
@@ -232,19 +235,22 @@ def analyzeDataset(filePath, passage_bucket_size, question_bucket_size, passage_
             passage_buckets[passage_bucket] += 1
 
             # get all number counts from each passage
-            for passage_word in passage_words:
-                new_reader_v1_count += new_reader_v1_get_count(passage_word)
-                _, temp_count = new_reader_v2_get_count(passage_word)
+            for passage_token_index, passage_token in enumerate(passage_tokens):
+                new_reader_v1_count += new_reader_v1_get_count(passage_token.text)
+                #_, temp_count = new_reader_v2_get_count(passage_token.text)
+                #new_reader_v2_count += temp_count
+                old_reader_count += old_reader_get_count(passage_token.text)
+            for passage_token_index, passage_token in enumerate(passage_tokens):
+                _, temp_count = new_reader_v2_get_count(passage_token.text)
                 new_reader_v2_count += temp_count
-                old_reader_count += old_reader_get_count(passage_word)
 
             # for each passage, iterate through all the questions
             for question_answer in passage_info["qa_pairs"]:
                 question_id = question_answer["query_id"]
                 question_text = question_answer["question"].strip()
                 question_words = question_text.split(" ")
-                question_tokens = tokenizer.tokenize(question_text)
-                question_tokens = split_tokens_by_hyphen(question_tokens)
+                question_tokens_og = tokenizer.tokenize(question_text)
+                question_tokens = split_tokens_by_hyphen(question_tokens_og)
                 num_questions += 1
                 num_tokens_in_question = len(question_tokens)
                 num_question_tokens += num_tokens_in_question
@@ -254,12 +260,14 @@ def analyzeDataset(filePath, passage_bucket_size, question_bucket_size, passage_
                 question_buckets[question_bucket] += 1
 
                 # get all number counts from each question
-                for question_word in question_text:
-                    new_reader_v1_count += new_reader_v1_get_count(question_word)
-                    _, temp_count = new_reader_v2_get_count(question_word)
+                for question_token_index, question_token in enumerate(question_tokens):
+                    new_reader_v1_count += new_reader_v1_get_count(question_token.text)
+                    #_, temp_count = new_reader_v2_get_count(question_token.text)
+                    #new_reader_v2_count += temp_count
+                    old_reader_count += old_reader_get_count(question_token.text)
+                for question_token_index, question_token in enumerate(question_tokens):
+                    _, temp_count = new_reader_v2_get_count(question_token.text)
                     new_reader_v2_count += temp_count
-                    old_reader_count += old_reader_get_count(question_word)
-
     # print out results
     dataset_filename = os.path.basename(filePath).rsplit('.', 1)[-2]
     print("\nAnalysis Complete!")

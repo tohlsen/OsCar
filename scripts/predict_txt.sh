@@ -1,0 +1,2 @@
+#!/bin/bash
+allennlp predict $1 $2 --predictor naqanet --include-package drop_library --use-dataset-reader --cuda-device 0 -o '{"dataset_reader": {"instance_format": "drop", "passage_length_limit": 400, "question_length_limit": 50, "skip_when_all_empty": [], "token_indexers": {"bert": {"do_lowercase": true, "pretrained_model": "bert-base-uncased", "type": "bert-pretrained", "use_starting_offsets": false}, "token_characters": {"min_padding_length": 5, "type": "characters"}, "tokens": {"lowercase_tokens": true, "type": "single_id"}}, "type": "drop_rc_v2_fixed"}}'
