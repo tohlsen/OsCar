@@ -1,13 +1,14 @@
 # Contextual and Numerically Augmented QANet (CNAQANet)
 
-**C**ontextual and **N**umerically **A**ugmented **QANet** (CNAQANet) is designed to improve the the performance of the current state-of-the-art model, [NAQANet](https://arxiv.org/pdf/1903.00161.pdf) on the [Discrete Reasoning Over Paragraphs (DROP) dataset](https://allennlp.org/drop).
+**C**ontextual and **N**umerically **A**ugmented **QANet** (**CNAQANet**) is designed to improve the the performance of the current state-of-the-art model, [NAQANet](https://arxiv.org/pdf/1903.00161.pdf) on the [Discrete Reasoning Over Paragraphs (DROP) dataset](https://allennlp.org/drop).
 
 CNAQANet uses contextualized word embeddings and a modified number extraction method. CNAQANet achieved a performance of **48.86% EM** and **52.09% F1** on DROP, a significant increase compared to NAQANet’s EM and F1 scores of 44.24% and 47.24%, respectively.
 
 The table below shows a side by side comparison of the performance of NAQANet and CNAQANet. As you can see, one of the most important results is that CNAQANet's ability for answering arithmetic questions has a significant boost over NAQANet.
 
 <table>
-<caption>Comparison of CNAQANet and NAQANet. Both models were trained for 50-60 epochs.<caption>
+<caption><b>Performance of CNAQANet and NAQANet on DROP Dataset</b><caption>
+  <thead>
   <tr>
     <td>Model</td>
     <td colspan="2">Dev (arithmetic)</td>
@@ -15,6 +16,7 @@ The table below shows a side by side comparison of the performance of NAQANet an
     <td colspan="2">Dev (full)</td>
     <td colspan="2">Hidden Test Set</td>
   </tr>
+  </thead>
   <tr>
     <td></td>
     <td>EM</td>
