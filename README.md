@@ -52,7 +52,7 @@ The table below shows a side by side comparison of the performance of NAQANet an
   </tr>
 </table>
 
-You can also take a look at our [paper]().
+You can also take a look at our [paper](https://www.overleaf.com/articles/cnaqanet/gpfkycttxcdg).
 
 ## Who are we
 
